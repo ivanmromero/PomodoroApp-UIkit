@@ -42,8 +42,6 @@ extension UIImage {
                                        start: CGPoint(x: 0, y: size.height),
                                        end: CGPoint(x: size.width, y: 0),
                                        options: .drawsAfterEndLocation)
-            
-            print(size.width, size.height)
         }
     }
 }

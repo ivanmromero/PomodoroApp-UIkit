@@ -30,8 +30,6 @@ class SettingsViewController: UIViewController {
             counterViews.append(counterView)
             counterView.translatesAutoresizingMaskIntoConstraints = false
             
-            print(counterView.frame)
-            
             view.addSubview(counterView)
             let topConstraint = index == 0 ? view.safeAreaLayoutGuide.topAnchor : counterViews[index-1].bottomAnchor
             

@@ -8,7 +8,6 @@
 import UIKit
 
 extension CALayer {
-    // Refactorizar a una unica funcion combinandola con la de innerShadow white y averiguar como funciona
     func addInnerShadow(shadowColor: UIColor = .clear,
                         shadowOffset: CGSize = CGSize(width: 0, height: 0),
                         shadowOpacity: Float = 0,
