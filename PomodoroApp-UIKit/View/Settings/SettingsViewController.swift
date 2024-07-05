@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController {
     private func addCountersViews() {
         guard let settings = viewModel?.getSettings() else { return }
 
-        for (index,setting) in settings.enumerated() {
+        for setting in settings {
             let lastView = view.subviews.last
             let counterView = CounterView(title: "\(setting.type ?? ""):", counter: "\(setting.count)")
             
