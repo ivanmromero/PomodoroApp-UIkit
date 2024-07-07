@@ -20,7 +20,7 @@
 		D25542FC2C2A104A000DAD18 /* CounterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25542FB2C2A104A000DAD18 /* CounterView.xib */; };
 		D25543022C2D0C87000DAD18 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25543012C2D0C87000DAD18 /* CALayer+Extension.swift */; };
 		D25543052C2D0D5A000DAD18 /* ShadowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25543042C2D0D5A000DAD18 /* ShadowType.swift */; };
-		D26CEB392BE74FAA0012E4F4 /* NavigationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26CEB382BE74FAA0012E4F4 /* NavigationButton.xib */; };
+		D26CEB392BE74FAA0012E4F4 /* NavigationButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26CEB382BE74FAA0012E4F4 /* NavigationButtonView.xib */; };
 		D2961E282BE7042000ADDD40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E272BE7042000ADDD40 /* AppDelegate.swift */; };
 		D2961E2A2BE7042000ADDD40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E292BE7042000ADDD40 /* SceneDelegate.swift */; };
 		D2961E322BE7042000ADDD40 /* PomodoroApp_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2961E302BE7042000ADDD40 /* PomodoroApp_UIKit.xcdatamodeld */; };
@@ -29,7 +29,7 @@
 		D2961E422BE7042300ADDD40 /* PomodoroApp_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E412BE7042300ADDD40 /* PomodoroApp_UIKitTests.swift */; };
 		D2961E5D2BE709C600ADDD40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E5B2BE709C600ADDD40 /* HomeViewController.swift */; };
 		D2961E5E2BE709C600ADDD40 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2961E5C2BE709C600ADDD40 /* HomeViewController.xib */; };
-		D2961E642BE7104C00ADDD40 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E632BE7104C00ADDD40 /* NavigationButton.swift */; };
+		D2961E642BE7104C00ADDD40 /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		D25542FB2C2A104A000DAD18 /* CounterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterView.xib; sourceTree = "<group>"; };
 		D25543012C2D0C87000DAD18 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		D25543042C2D0D5A000DAD18 /* ShadowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowType.swift; sourceTree = "<group>"; };
-		D26CEB382BE74FAA0012E4F4 /* NavigationButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationButton.xib; sourceTree = "<group>"; };
+		D26CEB382BE74FAA0012E4F4 /* NavigationButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationButtonView.xib; sourceTree = "<group>"; };
 		D2961E242BE7042000ADDD40 /* PomodoroApp-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PomodoroApp-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2961E272BE7042000ADDD40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2961E292BE7042000ADDD40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		D2961E412BE7042300ADDD40 /* PomodoroApp_UIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp_UIKitTests.swift; sourceTree = "<group>"; };
 		D2961E5B2BE709C600ADDD40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2961E5C2BE709C600ADDD40 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		D2961E632BE7104C00ADDD40 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +121,8 @@
 		D25542F82C2A0FDB000DAD18 /* NavigationButton */ = {
 			isa = PBXGroup;
 			children = (
-				D2961E632BE7104C00ADDD40 /* NavigationButton.swift */,
-				D26CEB382BE74FAA0012E4F4 /* NavigationButton.xib */,
+				D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */,
+				D26CEB382BE74FAA0012E4F4 /* NavigationButtonView.xib */,
 			);
 			path = NavigationButton;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2961E342BE7042200ADDD40 /* Assets.xcassets in Resources */,
-				D26CEB392BE74FAA0012E4F4 /* NavigationButton.xib in Resources */,
+				D26CEB392BE74FAA0012E4F4 /* NavigationButtonView.xib in Resources */,
 				D2961E372BE7042200ADDD40 /* Base in Resources */,
 				D25542FC2C2A104A000DAD18 /* CounterView.xib in Resources */,
 				D2961E5E2BE709C600ADDD40 /* HomeViewController.xib in Resources */,
@@ -355,7 +355,7 @@
 				D253ED632C2F20EA003734B2 /* SettingsModel.swift in Sources */,
 				D25542F72C2A0FCB000DAD18 /* CounterView.swift in Sources */,
 				D21DAC0C2C19138E007AE330 /* UIImage+Extension.swift in Sources */,
-				D2961E642BE7104C00ADDD40 /* NavigationButton.swift in Sources */,
+				D2961E642BE7104C00ADDD40 /* NavigationButtonView.swift in Sources */,
 				D2961E5D2BE709C600ADDD40 /* HomeViewController.swift in Sources */,
 				D21DAC152C19205F007AE330 /* SettingsViewController.swift in Sources */,
 				D25543022C2D0C87000DAD18 /* CALayer+Extension.swift in Sources */,
