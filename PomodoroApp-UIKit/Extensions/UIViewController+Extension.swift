@@ -17,7 +17,7 @@ extension UIViewController {
     }
     
     func setNavigationButton(position: NavigationButtonPosition, systemName: String, action: (() -> ())? = nil) {
-        let navigationButton = NavigationButton()
+        let navigationButton = NavigationButtonView()
         
         // set image
         navigationButton.navigationButtonImageView.image = UIImage(systemName: systemName)?.gradientImage([UIColor.systemPurple, UIColor.systemPink])?.withRenderingMode(.alwaysOriginal)

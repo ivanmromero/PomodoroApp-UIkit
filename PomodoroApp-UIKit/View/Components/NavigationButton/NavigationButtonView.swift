@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class NavigationButton: UIView {
+final class NavigationButtonView: UIView {
     @IBOutlet weak var navigationButtonImageView: UIImageView!
     
     var buttonAction: ()->() = {}

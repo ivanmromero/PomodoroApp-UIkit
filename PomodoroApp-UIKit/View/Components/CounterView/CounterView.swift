@@ -74,11 +74,11 @@ class CounterView: UIView {
                                     shadowRadius: 4)
         
         
-        gradientButtonImage(button: button)
+        setGradientImage(for: button)
     }
     
-    private func gradientButtonImage(button: UIButton) {
-        guard let imageView =  button.imageView else { return  }
+    private func setGradientImage(for button: UIButton) {
+        guard let imageView = button.imageView else { return  }
         
         switch button {
         case plusButton:
