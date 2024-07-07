@@ -174,10 +174,10 @@
 		D2961E262BE7042000ADDD40 /* PomodoroApp-UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				D21DAC0A2C19135C007AE330 /* Extensions */,
 				D2961E5F2BE70DA300ADDD40 /* Model */,
 				D2961E602BE70DA900ADDD40 /* ViewModel */,
 				D2961E612BE70DBA00ADDD40 /* View */,
+				D21DAC0A2C19135C007AE330 /* Extensions */,
 				D2961E272BE7042000ADDD40 /* AppDelegate.swift */,
 				D2961E292BE7042000ADDD40 /* SceneDelegate.swift */,
 				D2961E332BE7042200ADDD40 /* Assets.xcassets */,
