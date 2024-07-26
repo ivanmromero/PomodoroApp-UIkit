@@ -23,7 +23,7 @@ extension UIViewController {
         navigationButton.navigationButtonImageView.image = UIImage(systemName: systemName)?.gradientImage([UIColor.systemPurple, UIColor.systemPink])?.withRenderingMode(.alwaysOriginal)
 
         // set frame
-        navigationButton.frame = CGRect(x: 0, y: 0, width: navigationBarHeight * 0.75 , height: navigationBarHeight * 0.75)
+        navigationButton.frame = CGRect(x: 0, y: 0, width: navigationBarHeight, height: navigationBarHeight)
         
         // set action
         navigationButton.buttonAction = action ?? {}
