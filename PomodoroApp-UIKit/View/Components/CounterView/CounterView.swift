@@ -30,9 +30,9 @@ class CounterView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        updateShadowsOnLayout(layer: self.layer, for: .inner)
-        updateShadowsOnLayout(layer: minusButton.layer, for: .outer)
-        updateShadowsOnLayout(layer: plusButton.layer, for: .outer)
+        self.layer.updateShadowsOnLayout(for: .inner)
+        minusButton.layer.updateShadowsOnLayout(for: .outer)
+        plusButton.layer.updateShadowsOnLayout(for: .outer)
     }
     
     private func setup() {
@@ -43,37 +43,11 @@ class CounterView: UIView {
     }
     
     private func setupLayer() {
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = true
-        
-        self.layer.addInnerShadow(shadowColor: .black,
-                                  shadowOpacity: 0.4,
-                                  shadowRadius: 3)
-        
-        self.layer.addInnerShadow(shadowColor: .white,
-                                  shadowOpacity: 0.8,
-                                  shadowRadius: 4)
+        self.addDefaultShadow(for: .inner, cornerRadius: 10)
     }
     
     private func setup(_ button: UIButton) {
-        button.titleLabel?.numberOfLines = 0
-        button.titleLabel?.adjustsFontSizeToFitWidth = false
-        button.titleLabel?.lineBreakMode = .byClipping
-        button.layer.cornerRadius = 10
-        
-        button.layer.addBaseLayer()
-        
-        button.layer.addOuterShadow(shadowColor: .black,
-                                    shadowOpacity: 0.2,
-                                    shadowOffset: CGSize(width: 4, height: 4),
-                                    shadowRadius: 6)
-        
-        button.layer.addOuterShadow(shadowColor: .white,
-                                    shadowOpacity: 1,
-                                    shadowOffset: CGSize(width: -1, height: -1),
-                                    shadowRadius: 4)
-        
-        
+        button.addDefaultShadow(for: .outer, cornerRadius: 10)
         setGradientImage(for: button)
     }
     
@@ -92,48 +66,6 @@ class CounterView: UIView {
         }
     }
     
-    private func updateShadowsOnLayout(layer: CALayer, for shadowType: ShadowType) {
-        layer.sublayers?.forEach { sublayer in
-            guard let shadowColor = sublayer.shadowColor else { return }
-            
-            updateShadow(type: shadowType,
-                         layer: sublayer,
-                         color: shadowColor,
-                         bounds: layer.bounds,
-                         cornerRadius: layer.cornerRadius)
-        }
-    }
-    
-    private func updateShadow(type: ShadowType,
-                              layer: CALayer,
-                              color: CGColor,
-                              bounds: CGRect,
-                              cornerRadius: CGFloat) {
-        layer.updateFrame(with: bounds)
-        
-        switch type {
-        case .inner:
-            layer.updateInnerShadowPath(edge: getEdge(for: .inner, and: color), cornerRadius: cornerRadius)
-        case .outer:
-            layer.updateOuterShadowPath(edge: getEdge(for: .outer, and: color), cornerRadius: cornerRadius)
-        }
-    }
-    
-    private func getEdge(for shadowType: ShadowType, and color: CGColor) -> UIEdgeInsets {
-        switch (shadowType, color) {
-        case (.inner, UIColor.black.cgColor):
-            return UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 1)
-        case (.inner, UIColor.white.cgColor):
-            return UIEdgeInsets(top: 0, left: 3, bottom: 3, right: 0)
-        case (.outer, UIColor.black.cgColor):
-            return UIEdgeInsets(top: 2, left: 2, bottom: 0, right: 0)
-        case (.outer, UIColor.white.cgColor):
-            return UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 1)
-        default:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }
-    }
-    
     @IBAction func counterTapped(_ sender: UIButton) {
         changeCounterText(for: sender)
         
@@ -145,14 +77,18 @@ class CounterView: UIView {
               let counterNumber = Int(counterText)
         else { return }
         
+        let finalCounter: String
+        
         switch buttonPressed {
         case plusButton:
-            counter.text = String(counterNumber + 1)
+            finalCounter = String(counterNumber + 1)
         case minusButton:
-            counter.text = String(counterNumber - 1)
+            finalCounter = String(counterNumber - 1)
         default:
             return
         }
+        
+        counter.text = finalCounter
     }
 }
 

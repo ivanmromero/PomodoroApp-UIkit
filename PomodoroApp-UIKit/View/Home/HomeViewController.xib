@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,16 +17,68 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-CY-1Kx">
+                    <rect key="frame" x="20" y="59" width="390" height="839"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-65-3Uu" customClass="TitleSubtextView" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="97.333333333333329"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Pomodoro App"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subtextText" value="The app for you work better"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="axisRawValue">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sg-dP-Of8">
+                            <rect key="frame" x="0.0" y="117.33333333333334" width="390" height="419.33333333333326"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qP-mS9" customClass="TitleSubtextView" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="556.66666666666663" width="390" height="52.666666666666629"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="axisRawValue">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Gotta do some work?"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subtextText" value="Press plus button when you are ready"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVd-wU-M2q" customClass="PlayerControlView" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="629.33333333333337" width="390" height="209.66666666666663"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="s6Q-qP-mS9" firstAttribute="height" secondItem="GVd-wU-M2q" secondAttribute="height" multiplier="0.25" id="efL-Tp-MmQ"/>
+                        <constraint firstItem="8Sg-dP-Of8" firstAttribute="height" secondItem="GVd-wU-M2q" secondAttribute="height" multiplier="2" id="qGg-Vo-P2Y"/>
+                        <constraint firstItem="GVd-wU-M2q" firstAttribute="height" secondItem="hgn-CY-1Kx" secondAttribute="height" multiplier="0.25" id="yhn-ju-r63"/>
+                    </constraints>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BaseBackground"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hgn-CY-1Kx" secondAttribute="bottom" id="PUY-Zq-cmC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hgn-CY-1Kx" secondAttribute="trailing" constant="20" id="pJk-nr-T1H"/>
+                <constraint firstItem="hgn-CY-1Kx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rEa-dN-roa"/>
+                <constraint firstItem="hgn-CY-1Kx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vsX-yB-rz3"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
         <namedColor name="BaseBackground">
             <color red="0.88235294117647056" green="0.88235294117647056" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
