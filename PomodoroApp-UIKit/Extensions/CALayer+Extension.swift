@@ -23,7 +23,8 @@ extension CALayer {
     func addInnerShadow(shadowColor: UIColor = .clear,
                         shadowOffset: CGSize = CGSize(width: 0, height: 0),
                         shadowOpacity: Float = 0,
-                        shadowRadius: CGFloat = 0) {
+                        shadowRadius: CGFloat = 0,
+                        identifier: String = ShadowType.inner.rawValue) {
         let innerShadowLayer = CALayer()
         
         innerShadowLayer.updateFrame(with: bounds)
@@ -33,6 +34,7 @@ extension CALayer {
         innerShadowLayer.shadowOpacity = shadowOpacity
         innerShadowLayer.shadowRadius = shadowRadius
         innerShadowLayer.cornerRadius = cornerRadius
+        innerShadowLayer.name = identifier
         
         addSublayer(innerShadowLayer)
     }
@@ -40,7 +42,8 @@ extension CALayer {
     func addOuterShadow(shadowColor: UIColor? = nil,
                         shadowOpacity: Float = 0.0,
                         shadowOffset: CGSize = CGSize(width: 0, height: 0),
-                        shadowRadius: CGFloat = 3.0) {
+                        shadowRadius: CGFloat = 3.0,
+                        identifier: String = ShadowType.outer.rawValue) {
         let outerShadowLayer = CALayer()
         
         outerShadowLayer.updateFrame(with: bounds)
@@ -49,6 +52,7 @@ extension CALayer {
         outerShadowLayer.shadowOpacity = shadowOpacity
         outerShadowLayer.shadowOffset = shadowOffset
         outerShadowLayer.shadowRadius = shadowRadius
+        outerShadowLayer.name = identifier
         
         insertSublayer(outerShadowLayer, at: 0)
     }

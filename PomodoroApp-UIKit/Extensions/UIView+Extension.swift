@@ -34,30 +34,39 @@ extension UIView {
     }
     
     private func addDefaultOuterShadow() {
-        layer.addBaseLayer()
-        
-        layer.addOuterShadow(shadowColor: .black,
-                             shadowOpacity: 0.2,
-                             shadowOffset: CGSize(width: 4, height: 4),
-                             shadowRadius: 6)
-
-        layer.addOuterShadow(shadowColor: .white,
-                             shadowOpacity: 1,
-                             shadowOffset: CGSize(width: -1, height: -1),
-                             shadowRadius: 4)
-        
-        layer.updateShadowsOnLayout(for: .outer)
+        if !hasPreviousLayerWith(name: ShadowType.outer.rawValue) {
+            layer.addBaseLayer()
+            
+            layer.addOuterShadow(shadowColor: .black,
+                                 shadowOpacity: 0.2,
+                                 shadowOffset: CGSize(width: 4, height: 4),
+                                 shadowRadius: 6)
+            
+            layer.addOuterShadow(shadowColor: .white,
+                                 shadowOpacity: 1,
+                                 shadowOffset: CGSize(width: -1, height: -1),
+                                 shadowRadius: 4)
+            
+            layer.updateShadowsOnLayout(for: .outer)
+        }
     }
     
     private func addDefaultInnerShadow() {
-        layer.addInnerShadow(shadowColor: .black,
-                             shadowOpacity: 0.4,
-                             shadowRadius: 3)
-        
-        layer.addInnerShadow(shadowColor: .white,
-                             shadowOpacity: 0.8,
-                             shadowRadius: 4)
-        
-        layer.updateShadowsOnLayout(for: .inner)
+        if !hasPreviousLayerWith(name: ShadowType.inner.rawValue) {
+            
+            layer.addInnerShadow(shadowColor: .black,
+                                 shadowOpacity: 0.4,
+                                 shadowRadius: 3)
+            
+            layer.addInnerShadow(shadowColor: .white,
+                                 shadowOpacity: 0.8,
+                                 shadowRadius: 4)
+            
+            layer.updateShadowsOnLayout(for: .inner)
+        }
+    }
+    
+    func hasPreviousLayerWith(name: String) -> Bool {
+        layer.sublayers?.contains { $0.name == name } ?? false
     }
 }

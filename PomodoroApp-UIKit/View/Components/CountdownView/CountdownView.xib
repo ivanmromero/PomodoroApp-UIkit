@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountdownView" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+            <connections>
+                <outlet property="innerShadowView" destination="2Mo-R7-LF0" id="Rbj-h1-Rfc"/>
+                <outlet property="outerShadowView" destination="KiM-n0-soD" id="1vp-H6-lQn"/>
+                <outlet property="timeLabel" destination="SNC-s7-KM9" id="35y-eC-BDI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="387"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mo-R7-LF0" userLabel="inner shadow">
+                    <rect key="frame" x="12.5" y="9.5" width="368" height="368"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="2Mo-R7-LF0" secondAttribute="height" id="zUM-xq-75j"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiM-n0-soD" userLabel="outer shadow">
+                    <rect key="frame" x="32" y="29" width="329" height="329"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FFT-bX-7m6">
+                            <rect key="frame" x="0.0" y="0.0" width="329" height="329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-zL-UDi">
+                                    <rect key="frame" x="0.0" y="0.0" width="329" height="109.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-s7-KM9">
+                                    <rect key="frame" x="0.0" y="109.5" width="329" height="110"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-yn-iwa">
+                                    <rect key="frame" x="0.0" y="219.5" width="329" height="109.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="FFT-bX-7m6" secondAttribute="height" id="Crc-a3-LwG"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="BaseBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FFT-bX-7m6" secondAttribute="trailing" id="HqL-xB-vxs"/>
+                        <constraint firstAttribute="width" secondItem="KiM-n0-soD" secondAttribute="height" multiplier="1:1" id="Za9-xW-2Gv"/>
+                        <constraint firstItem="FFT-bX-7m6" firstAttribute="leading" secondItem="KiM-n0-soD" secondAttribute="leading" id="bX8-sr-7D7"/>
+                        <constraint firstItem="FFT-bX-7m6" firstAttribute="top" secondItem="KiM-n0-soD" secondAttribute="top" id="grE-Jq-ORE"/>
+                        <constraint firstAttribute="bottom" secondItem="FFT-bX-7m6" secondAttribute="bottom" id="hrN-Nq-vt6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KiM-n0-soD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4po-hq-h7b"/>
+                <constraint firstItem="KiM-n0-soD" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.85" id="Q75-oQ-R6i"/>
+                <constraint firstItem="2Mo-R7-LF0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jPv-Ql-2e0"/>
+                <constraint firstItem="2Mo-R7-LF0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jU2-un-xwU"/>
+                <constraint firstItem="2Mo-R7-LF0" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.95" id="t0O-Vh-p9J"/>
+                <constraint firstItem="KiM-n0-soD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wB6-Qo-G0Z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-72.51908396946564" y="152.46478873239437"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BaseBackground">
+            <color red="0.88235294117647056" green="0.88235294117647056" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

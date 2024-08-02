@@ -34,6 +34,8 @@
 		D2961E642BE7104C00ADDD40 /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */; };
 		D2DF32182C508E76007E897A /* PlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DF32162C508E76007E897A /* PlayerControlView.swift */; };
 		D2DF32192C508E76007E897A /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DF32172C508E76007E897A /* PlayerControlView.xib */; };
+		D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EB18342C545FC0004F44F2 /* CountdownView.swift */; };
+		D2EB18372C545FD3004F44F2 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EB18362C545FD3004F44F2 /* CountdownView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
 		D2DF32162C508E76007E897A /* PlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlView.swift; sourceTree = "<group>"; };
 		D2DF32172C508E76007E897A /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
+		D2EB18342C545FC0004F44F2 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		D2EB18362C545FD3004F44F2 /* CountdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,11 +168,11 @@
 		D26CEB372BE715280012E4F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D2DF32162C508E76007E897A /* PlayerControlView.swift */,
-				D2DF32172C508E76007E897A /* PlayerControlView.xib */,
+				D2DF321A2C5343A9007E897A /* PlayerControl */,
 				D258A62F2C3B4ACE00F68990 /* TilteSubtext */,
 				D25542F82C2A0FDB000DAD18 /* NavigationButton */,
 				D25543032C2D0CCA000DAD18 /* CounterView */,
+				D2EB18382C545FDB004F44F2 /* CountdownView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -261,6 +265,24 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D2DF321A2C5343A9007E897A /* PlayerControl */ = {
+			isa = PBXGroup;
+			children = (
+				D2DF32162C508E76007E897A /* PlayerControlView.swift */,
+				D2DF32172C508E76007E897A /* PlayerControlView.xib */,
+			);
+			path = PlayerControl;
+			sourceTree = "<group>";
+		};
+		D2EB18382C545FDB004F44F2 /* CountdownView */ = {
+			isa = PBXGroup;
+			children = (
+				D2EB18342C545FC0004F44F2 /* CountdownView.swift */,
+				D2EB18362C545FD3004F44F2 /* CountdownView.xib */,
+			);
+			path = CountdownView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,6 +366,7 @@
 			files = (
 				D2961E342BE7042200ADDD40 /* Assets.xcassets in Resources */,
 				D258A6332C3B4B4C00F68990 /* TitleSubtextView.xib in Resources */,
+				D2EB18372C545FD3004F44F2 /* CountdownView.xib in Resources */,
 				D2DF32192C508E76007E897A /* PlayerControlView.xib in Resources */,
 				D26CEB392BE74FAA0012E4F4 /* NavigationButtonView.xib in Resources */,
 				D2961E372BE7042200ADDD40 /* Base in Resources */,
@@ -368,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */,
 				D21DAC102C191FA0007AE330 /* UIViewController+Extension.swift in Sources */,
 				D2961E282BE7042000ADDD40 /* AppDelegate.swift in Sources */,
 				D21DAC0E2C19141E007AE330 /* UIView+Extension.swift in Sources */,
