@@ -9,10 +9,13 @@ import UIKit
 import SwiftUI
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var countdownView: CountdownView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setHomeNavigationBarButtons()
+        
+        countdownView.startCountdown()
     }
     
     private func setHomeNavigationBarButtons() {

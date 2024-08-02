@@ -5,6 +5,6 @@
 //  Created by Ivan Romero on 27/06/2024.
 //
 
-enum ShadowType {
+enum ShadowType: String {
     case inner, outer
 }
