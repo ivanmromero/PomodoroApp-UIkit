@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PomodoroApp_UIKit" customModuleProvider="target">
             <connections>
                 <outlet property="countdownView" destination="8Sg-dP-Of8" id="iFh-5w-Iap"/>
+                <outlet property="playerControlView" destination="GVd-wU-M2q" id="SzG-er-spA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
