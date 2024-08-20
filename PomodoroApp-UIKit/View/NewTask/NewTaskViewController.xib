@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTaskViewController" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="1qZ-os-exB" id="HUt-4P-LMe"/>
+                <outlet property="dismissButtonBottomConstraint" destination="vnj-dR-Li9" id="XP7-cQ-X6q"/>
+                <outlet property="dissmissButton" destination="53w-GI-ThM" id="LRH-Me-eM3"/>
+                <outlet property="segmentedControlView" destination="wCB-ze-Dh6" id="Ao4-Xi-1Wg"/>
+                <outlet property="taskTextView" destination="ruf-iq-F2R" id="ZZA-D3-lrf"/>
+                <outlet property="taskTextViewInnerShadow" destination="bK6-ay-wXi" id="dwi-8i-zki"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53w-GI-ThM">
+                    <rect key="frame" x="336.66666666666669" y="69" width="46.333333333333314" height="34.333333333333343"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="dissmissTapped:" destination="-1" eventType="touchUpInside" id="VJJ-lK-1jV"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTd-LQ-Zk1" customClass="TitleSubtextView" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="113.33333333333331" width="393" height="53"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Create New Task"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="axisRawValue">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subtextText" value="Introduce task information"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bK6-ay-wXi">
+                    <rect key="frame" x="20" y="186.33333333333334" width="353" height="42.333333333333343"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ruf-iq-F2R">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="42.333333333333336"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ruf-iq-F2R" firstAttribute="top" secondItem="bK6-ay-wXi" secondAttribute="top" id="Ge2-8n-xeI"/>
+                        <constraint firstAttribute="trailing" secondItem="ruf-iq-F2R" secondAttribute="trailing" id="JCS-vo-pY6"/>
+                        <constraint firstAttribute="bottom" secondItem="ruf-iq-F2R" secondAttribute="bottom" id="YIa-bR-1Ek"/>
+                        <constraint firstItem="ruf-iq-F2R" firstAttribute="leading" secondItem="bK6-ay-wXi" secondAttribute="leading" id="w5e-v6-lJv"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qZ-os-exB">
+                    <rect key="frame" x="98.333333333333329" y="769" width="196.33333333333337" height="49"/>
+                    <color key="backgroundColor" name="BaseBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="height" secondItem="1qZ-os-exB" secondAttribute="width" multiplier="1:4" id="j2B-dI-C6j"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="addButtonTapped:" destination="-1" eventType="touchUpInside" id="G9L-G1-sNg"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-ze-Dh6" customClass="SegmentedControlView" customModule="PomodoroApp_UIKit" customModuleProvider="target">
+                    <rect key="frame" x="20" y="248.66666666666663" width="353" height="49.333333333333371"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="quantitySegments">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="segmentTitlesByComma" value="Work,Personal"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="BaseBackground"/>
+            <constraints>
+                <constraint firstItem="sTd-LQ-Zk1" firstAttribute="top" secondItem="53w-GI-ThM" secondAttribute="bottom" constant="10" id="2RW-i5-Zei"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bK6-ay-wXi" secondAttribute="trailing" constant="20" id="CVZ-Eq-U8R"/>
+                <constraint firstItem="bK6-ay-wXi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IYe-43-gG9"/>
+                <constraint firstItem="1qZ-os-exB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="K8G-mv-AbC"/>
+                <constraint firstItem="sTd-LQ-Zk1" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="Pp7-1d-ypP"/>
+                <constraint firstItem="wCB-ze-Dh6" firstAttribute="height" secondItem="1qZ-os-exB" secondAttribute="height" id="UCD-dA-6hQ"/>
+                <constraint firstItem="1qZ-os-exB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wCB-ze-Dh6" secondAttribute="bottom" constant="20" id="W2A-iu-bez"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wCB-ze-Dh6" secondAttribute="trailing" constant="20" id="WGm-Rz-U6R"/>
+                <constraint firstItem="wCB-ze-Dh6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Y46-bZ-sN0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="53w-GI-ThM" secondAttribute="trailing" constant="10" id="bBv-4U-u97"/>
+                <constraint firstItem="wCB-ze-Dh6" firstAttribute="top" secondItem="bK6-ay-wXi" secondAttribute="bottom" constant="20" id="iCE-b2-lSC"/>
+                <constraint firstItem="53w-GI-ThM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="oJg-ZJ-ojT"/>
+                <constraint firstItem="bK6-ay-wXi" firstAttribute="top" secondItem="sTd-LQ-Zk1" secondAttribute="bottom" constant="20" id="q4K-qk-F7n"/>
+                <constraint firstItem="sTd-LQ-Zk1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sog-Hq-zaW"/>
+                <constraint firstItem="1qZ-os-exB" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="uoS-AT-JUX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1qZ-os-exB" secondAttribute="bottom" id="vnj-dR-Li9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sTd-LQ-Zk1" secondAttribute="trailing" id="wN4-s5-N8W"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="BaseBackground">
+            <color red="0.88235294117647056" green="0.88235294117647056" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

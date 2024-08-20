@@ -35,7 +35,6 @@ class CountdownView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         setupShadows()
-        setupShapeLayer()
     }
     
     private func setup() {
@@ -113,6 +112,8 @@ class CountdownView: UIView {
     }
     
     func startCountdown() {
+        remainingTime = totalTime
+        setupShapeLayer()
         timerStart()
         startAnimation()
     }
