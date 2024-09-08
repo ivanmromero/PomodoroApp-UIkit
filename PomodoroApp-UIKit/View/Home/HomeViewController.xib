@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="countdownView" destination="8Sg-dP-Of8" id="iFh-5w-Iap"/>
                 <outlet property="playerControlView" destination="GVd-wU-M2q" id="SzG-er-spA"/>
+                <outlet property="taskInfoView" destination="s6Q-qP-mS9" id="Jh3-DK-irG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

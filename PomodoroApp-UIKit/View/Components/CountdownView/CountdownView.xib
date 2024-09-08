@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="innerShadowView" destination="2Mo-R7-LF0" id="Rbj-h1-Rfc"/>
                 <outlet property="outerShadowView" destination="KiM-n0-soD" id="1vp-H6-lQn"/>
+                <outlet property="stageLabel" destination="YyV-yn-iwa" id="w0T-uc-Udc"/>
                 <outlet property="timeLabel" destination="SNC-s7-KM9" id="35y-eC-BDI"/>
             </connections>
         </placeholder>
@@ -33,7 +34,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FFT-bX-7m6">
                             <rect key="frame" x="0.0" y="0.0" width="329" height="329"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-zL-UDi">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-zL-UDi">
                                     <rect key="frame" x="0.0" y="0.0" width="329" height="109.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

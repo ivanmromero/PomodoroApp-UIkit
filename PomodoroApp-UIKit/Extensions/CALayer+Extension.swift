@@ -111,4 +111,12 @@ extension CALayer {
         path.append(cutout)
         shadowPath = path.cgPath
     }
+    
+    func removeSublayer(name: String) {
+        guard let sublayers = self.sublayers else { return }
+        
+        if let layerToRemove = sublayers.first(where: { $0.name == name }) {
+            layerToRemove.removeFromSuperlayer()
+        }
+    }
 }
