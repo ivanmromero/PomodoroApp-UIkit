@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21843522C8E436B0009313C /* PlayerControlViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21843512C8E436B0009313C /* PlayerControlViewDelegate.swift */; };
 		D21DAC0C2C19138E007AE330 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC0B2C19138E007AE330 /* UIImage+Extension.swift */; };
 		D21DAC0E2C19141E007AE330 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC0D2C19141E007AE330 /* UIView+Extension.swift */; };
 		D21DAC102C191FA0007AE330 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC0F2C191FA0007AE330 /* UIViewController+Extension.swift */; };
@@ -39,6 +40,13 @@
 		D2961E5D2BE709C600ADDD40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E5B2BE709C600ADDD40 /* HomeViewController.swift */; };
 		D2961E5E2BE709C600ADDD40 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2961E5C2BE709C600ADDD40 /* HomeViewController.xib */; };
 		D2961E642BE7104C00ADDD40 /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */; };
+		D2C0A6622C7D5A3200FF3653 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6612C7D5A3200FF3653 /* TimerManager.swift */; };
+		D2C0A6642C7D5A8C00FF3653 /* TimerManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6632C7D5A8C00FF3653 /* TimerManagerDelegate.swift */; };
+		D2C0A6682C81210F00FF3653 /* CountdownViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6672C81210F00FF3653 /* CountdownViewDelegate.swift */; };
+		D2C0A6922C87D0F900FF3653 /* CircularGradientStrokeEndAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6912C87D0F800FF3653 /* CircularGradientStrokeEndAnimation.swift */; };
+		D2C0A6942C87D16A00FF3653 /* GradientLayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6932C87D16A00FF3653 /* GradientLayerProvider.swift */; };
+		D2C0A6962C87D1F300FF3653 /* DefaultGradientLayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6952C87D1F300FF3653 /* DefaultGradientLayerProvider.swift */; };
+		D2C0A6982C8805FF00FF3653 /* CountdownViewStagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6972C8805FF00FF3653 /* CountdownViewStagesHandler.swift */; };
 		D2DF32182C508E76007E897A /* PlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DF32162C508E76007E897A /* PlayerControlView.swift */; };
 		D2DF32192C508E76007E897A /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DF32172C508E76007E897A /* PlayerControlView.xib */; };
 		D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EB18342C545FC0004F44F2 /* CountdownView.swift */; };
@@ -56,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D21843512C8E436B0009313C /* PlayerControlViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlViewDelegate.swift; sourceTree = "<group>"; };
 		D21DAC0B2C19138E007AE330 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		D21DAC0D2C19141E007AE330 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D21DAC0F2C191FA0007AE330 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -91,6 +100,13 @@
 		D2961E5B2BE709C600ADDD40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2961E5C2BE709C600ADDD40 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
+		D2C0A6612C7D5A3200FF3653 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		D2C0A6632C7D5A8C00FF3653 /* TimerManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerDelegate.swift; sourceTree = "<group>"; };
+		D2C0A6672C81210F00FF3653 /* CountdownViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewDelegate.swift; sourceTree = "<group>"; };
+		D2C0A6912C87D0F800FF3653 /* CircularGradientStrokeEndAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGradientStrokeEndAnimation.swift; sourceTree = "<group>"; };
+		D2C0A6932C87D16A00FF3653 /* GradientLayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerProvider.swift; sourceTree = "<group>"; };
+		D2C0A6952C87D1F300FF3653 /* DefaultGradientLayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGradientLayerProvider.swift; sourceTree = "<group>"; };
+		D2C0A6972C8805FF00FF3653 /* CountdownViewStagesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewStagesHandler.swift; sourceTree = "<group>"; };
 		D2DF32162C508E76007E897A /* PlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlView.swift; sourceTree = "<group>"; };
 		D2DF32172C508E76007E897A /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
 		D2EB18342C545FC0004F44F2 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
@@ -115,6 +131,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21843572C8E51DD0009313C /* CircularGradientStrokeEndAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0A6912C87D0F800FF3653 /* CircularGradientStrokeEndAnimation.swift */,
+			);
+			path = CircularGradientStrokeEndAnimation;
+			sourceTree = "<group>";
+		};
+		D21843582C8E52040009313C /* GradientLayerProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0A6932C87D16A00FF3653 /* GradientLayerProvider.swift */,
+				D2C0A6952C87D1F300FF3653 /* DefaultGradientLayerProvider.swift */,
+			);
+			path = GradientLayerProvider;
+			sourceTree = "<group>";
+		};
 		D21DAC0A2C19135C007AE330 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +270,7 @@
 				D2961E602BE70DA900ADDD40 /* ViewModel */,
 				D2961E612BE70DBA00ADDD40 /* View */,
 				D21DAC0A2C19135C007AE330 /* Extensions */,
+				D2C0A6602C7D5A1300FF3653 /* Utilities */,
 				D2961E272BE7042000ADDD40 /* AppDelegate.swift */,
 				D2961E292BE7042000ADDD40 /* SceneDelegate.swift */,
 				D2961E332BE7042200ADDD40 /* Assets.xcassets */,
@@ -302,9 +336,29 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D2C0A6602C7D5A1300FF3653 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D21843582C8E52040009313C /* GradientLayerProvider */,
+				D21843572C8E51DD0009313C /* CircularGradientStrokeEndAnimation */,
+				D2C0A6652C7D5AE300FF3653 /* TimerManager */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D2C0A6652C7D5AE300FF3653 /* TimerManager */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0A6632C7D5A8C00FF3653 /* TimerManagerDelegate.swift */,
+				D2C0A6612C7D5A3200FF3653 /* TimerManager.swift */,
+			);
+			path = TimerManager;
+			sourceTree = "<group>";
+		};
 		D2DF321A2C5343A9007E897A /* PlayerControl */ = {
 			isa = PBXGroup;
 			children = (
+				D21843512C8E436B0009313C /* PlayerControlViewDelegate.swift */,
 				D2DF32162C508E76007E897A /* PlayerControlView.swift */,
 				D2DF32172C508E76007E897A /* PlayerControlView.xib */,
 			);
@@ -314,6 +368,8 @@
 		D2EB18382C545FDB004F44F2 /* CountdownView */ = {
 			isa = PBXGroup;
 			children = (
+				D2C0A6672C81210F00FF3653 /* CountdownViewDelegate.swift */,
+				D2C0A6972C8805FF00FF3653 /* CountdownViewStagesHandler.swift */,
 				D2EB18342C545FC0004F44F2 /* CountdownView.swift */,
 				D2EB18362C545FD3004F44F2 /* CountdownView.xib */,
 			);
@@ -434,12 +490,19 @@
 				D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */,
 				D27868012C63D7EE0062B67E /* SegmentedControlView.swift in Sources */,
 				D21DAC102C191FA0007AE330 /* UIViewController+Extension.swift in Sources */,
+				D2C0A6942C87D16A00FF3653 /* GradientLayerProvider.swift in Sources */,
+				D2C0A6642C7D5A8C00FF3653 /* TimerManagerDelegate.swift in Sources */,
 				D2498D372C6A71CF00577E91 /* NewTaskViewControllerDelegate.swift in Sources */,
 				D2961E282BE7042000ADDD40 /* AppDelegate.swift in Sources */,
+				D2C0A6982C8805FF00FF3653 /* CountdownViewStagesHandler.swift in Sources */,
+				D2C0A6962C87D1F300FF3653 /* DefaultGradientLayerProvider.swift in Sources */,
 				D21DAC0E2C19141E007AE330 /* UIView+Extension.swift in Sources */,
 				D21DAC1A2C1930A6007AE330 /* HistoryViewController.swift in Sources */,
+				D2C0A6922C87D0F900FF3653 /* CircularGradientStrokeEndAnimation.swift in Sources */,
 				D2961E2A2BE7042000ADDD40 /* SceneDelegate.swift in Sources */,
+				D2C0A6622C7D5A3200FF3653 /* TimerManager.swift in Sources */,
 				D2961E322BE7042000ADDD40 /* PomodoroApp_UIKit.xcdatamodeld in Sources */,
+				D21843522C8E436B0009313C /* PlayerControlViewDelegate.swift in Sources */,
 				D253ED632C2F20EA003734B2 /* SettingsModel.swift in Sources */,
 				D25542F72C2A0FCB000DAD18 /* CounterView.swift in Sources */,
 				D21DAC0C2C19138E007AE330 /* UIImage+Extension.swift in Sources */,
@@ -447,6 +510,7 @@
 				D2961E5D2BE709C600ADDD40 /* HomeViewController.swift in Sources */,
 				D27867FD2C62C7600062B67E /* UIButton+Extension.swift in Sources */,
 				D27867FF2C63C2B00062B67E /* NewTaskViewModel.swift in Sources */,
+				D2C0A6682C81210F00FF3653 /* CountdownViewDelegate.swift in Sources */,
 				D21DAC152C19205F007AE330 /* SettingsViewController.swift in Sources */,
 				D25543022C2D0C87000DAD18 /* CALayer+Extension.swift in Sources */,
 				D258A6312C3B4B0400F68990 /* TitleSubtextView.swift in Sources */,

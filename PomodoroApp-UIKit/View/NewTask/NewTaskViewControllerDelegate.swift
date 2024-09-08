@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NewTaskViewControllerDelegate: AnyObject {
-    func taskDidAdded(task: String)
+    func taskDidAdded(task: String, taskType: String)
 }

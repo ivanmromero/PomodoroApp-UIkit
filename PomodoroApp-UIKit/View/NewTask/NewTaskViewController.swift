@@ -8,6 +8,7 @@
 import UIKit
 
 class NewTaskViewController: UIViewController {
+    // MARK: @IBOutlets
     @IBOutlet weak var dissmissButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var taskTextView: UITextView!
@@ -15,10 +16,14 @@ class NewTaskViewController: UIViewController {
     @IBOutlet weak var dismissButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var segmentedControlView: SegmentedControlView!
     
+    // MARK: Private Properties
     private let newTaskViewModel = NewTaskViewModel()
     private var taskText: String?
-    weak var delegate: NewTaskViewControllerDelegate? = nil
     
+    // MARK: Delegate
+    weak var delegate: NewTaskViewControllerDelegate?
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -31,10 +36,12 @@ class NewTaskViewController: UIViewController {
         addButton.addDefaultShadow(for: .outer)
     }
     
+    // MARK: Deinitializer
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: Setups
     private func setup() {
         setupTaskTextView()
         setupAddButton()
@@ -58,6 +65,7 @@ class NewTaskViewController: UIViewController {
         taskTextView.becomeFirstResponder()
     }
     
+    // MARK: Keyboard Handling
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -84,6 +92,7 @@ class NewTaskViewController: UIViewController {
         }
     }
     
+    // MARK: @IBActions
     @IBAction func addButtonTapped(_ sender: UIButton) {
         guard let taskText = taskText,
               let taskType = segmentedControlView.selectedSegment,
@@ -94,7 +103,7 @@ class NewTaskViewController: UIViewController {
         
         if newTaskViewModel.createTask(with: taskText, and: taskType) {
             dissmissTapped(dissmissButton as Any)
-            delegate?.taskDidAdded(task: taskText)
+            delegate?.taskDidAdded(task: taskText, taskType: taskType)
         }
     }
     

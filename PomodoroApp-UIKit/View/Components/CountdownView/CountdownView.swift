@@ -8,16 +8,21 @@
 import UIKit
 
 class CountdownView: UIView {
+    // MARK: @IBOutlets
     @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var stageLabel: UILabel!
     @IBOutlet private weak var outerShadowView: UIView!
     @IBOutlet private weak var innerShadowView: UIView!
     
-    private var shapeLayer: CAShapeLayer = CAShapeLayer()
-    private var timer: Timer?
-    private var totalTime: Int = 10
-    private var remainingTime: Int = 10
-    private var backgroundTime: CFTimeInterval?
+    // MARK: Private properties
+    private var timerManager: TimerManager?
+    private var circularGradientCountdownAnimation: CircularGradientStrokeEndAnimation?
+    private var stagesHandler: CountdownViewStagesHandler?
     
+    // MARK: Delegate
+    var delegate: CountdownViewDelegate?
+    
+    // MARK: Initializations
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -28,19 +33,20 @@ class CountdownView: UIView {
         setup()
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
+    // MARK: Override funcs
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         setupShadows()
     }
     
+    // MARK: Setups
     private func setup() {
         instantiateCustomViewOnNib(name: self.name)
+        setupTimeLabel()
+    }
+    
+    private func setupTimeLabel() {
         timeLabel.font = timeLabel.font.withSize(timeLabel.frame.height * 2/3)
-        addObservers()
     }
     
     private func setupShadows() {
@@ -65,100 +71,142 @@ class CountdownView: UIView {
         }
     }
     
-    private func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-    }
-    
-    @objc func appDidEnterBackground() {
-        backgroundTime = CACurrentMediaTime()
-        invalidateTimer()
-    }
-
-    @objc func appWillEnterForeground() {
-        guard let backgroundTime = backgroundTime else { return }
-        let timeInBackground = CACurrentMediaTime() - backgroundTime
-        remainingTime -= Int(timeInBackground)
-        startAnimation(withRemainingTime: true)
-        timerStart()
-    }
-    
-    private func setupShapeLayer() {
+    private func setupCircularGradientAnimation() {
         if !innerShadowView.hasPreviousLayerWith(name: "gradientWithMask") {
-            let circularPath = UIBezierPath(arcCenter: .zero, radius: calculateRadius(for: outerShadowView), startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi * 3 / 2, clockwise: true)
-            shapeLayer.path = circularPath.cgPath
-            shapeLayer.strokeColor = UIColor.red.cgColor
-            shapeLayer.lineWidth = abs(innerShadowView.layer.cornerRadius - outerShadowView.layer.cornerRadius) * 3
-            shapeLayer.position = CGPoint(x: innerShadowView.bounds.midX, y: innerShadowView.bounds.midY)
+            let gradientLayerProvider = DefaultGradientLayerProvider(frame: self.bounds)
+            self.circularGradientCountdownAnimation = CircularGradientStrokeEndAnimation(gradientLayerProvider: gradientLayerProvider)
             
-            let gradientLayer = CAGradientLayer()
-            gradientLayer.frame = self.bounds
-            gradientLayer.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
-            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-            gradientLayer.mask = shapeLayer
-            gradientLayer.name = "gradientWithMask"
+            let radius = calculateRadius(for: outerShadowView)
+            let lineWidth = abs(innerShadowView.layer.cornerRadius - outerShadowView.layer.cornerRadius) * 3
+            let position = CGPoint(x: innerShadowView.bounds.midX, y: innerShadowView.bounds.midY)
             
-            innerShadowView.clipsToBounds = true
-            
-            innerShadowView.layer.addSublayer(gradientLayer)
+            circularGradientCountdownAnimation?.addAnimation(to: innerShadowView, 
+                                                             with: radius, lineWidth, position)
         }
     }
     
+    // MARK: Private Funcs
     private func calculateRadius(for view: UIView) -> CGFloat {
         let viewWidth = view.bounds.width
         let viewHeight = view.bounds.height
         return (min(viewWidth, viewHeight) / 2)
     }
     
-    func startCountdown() {
-        remainingTime = totalTime
-        setupShapeLayer()
-        timerStart()
-        startAnimation()
-    }
-    
-    private func timerStart() {
-        if remainingTime > 0 {
-            updateTimeLabel()
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCountdown), userInfo: nil, repeats: true)
-        }
-    }
-    
-    @objc private func updateCountdown() {
-        remainingTime -= 1
+    private func updateLabels() {
         updateTimeLabel()
-        
-        if remainingTime == 0 {
-            invalidateTimer()
-        }
-    }
-    
-    private func invalidateTimer() {
-        timer?.invalidate()
-        timer = nil
+        updateStagelabel()
     }
     
     private func updateTimeLabel() {
+        guard let remainingTime = timerManager?.remainingTime,
+              remainingTime >= 0
+        else {
+            timeLabel.text = "00:00"
+            return
+        }
+        
         let minutes = remainingTime / 60
         let seconds = remainingTime % 60
         
         timeLabel.text = String(format: "%02d:%02d", minutes, seconds)
     }
     
-    private func startAnimation(withRemainingTime: Bool = false) {
-        shapeLayer.removeAllAnimations()
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.fromValue = withRemainingTime ? 1 - ((CFTimeInterval(totalTime - remainingTime)) / Double(totalTime)) : 1
-        basicAnimation.toValue = 0
-        basicAnimation.duration = withRemainingTime ? CFTimeInterval(remainingTime) : CFTimeInterval(totalTime)
-        basicAnimation.fillMode = .forwards
-        basicAnimation.isRemovedOnCompletion = false
-        shapeLayer.add(basicAnimation, forKey: "urSoBasic")
+    private func updateStagelabel() {
+        guard let stagesHandler = stagesHandler 
+        else {
+            stageLabel.text = "P0"
+            return
+        }
+        
+        stageLabel.text = !stagesHandler.isTimeToRest ? "P\(stagesHandler.currentStage)" : "REST"
     }
     
-    func setTimeForUse(seconds: Int) {
-        totalTime = seconds
-        remainingTime = totalTime
+    private func startCircularGradientAnimation(withRemainingTime: Bool = false) {
+        guard let totalTime = timerManager?.totalSeconds,
+              let remainingTime = timerManager?.remainingTime
+        else { return }
+        
+        let totalTimeInterval = CFTimeInterval(totalTime)
+        let remainingTimeInterval = CFTimeInterval(remainingTime)
+        
+        circularGradientCountdownAnimation?.start(totalTime: totalTimeInterval,
+                                                  remainingTime: remainingTimeInterval,
+                                                  withRemainingTime: withRemainingTime)
+    }
+    
+    private func invalidateTimer() {
+        timerManager?.stop()
+        timerManager = nil
+    }
+    
+    // MARK: Countdown Control
+    func startCountdown(totalSeconds: Int,
+                        stagesQuantity: Int = 0,
+                        secondsToBasicRest: Int = 0,
+                        secondsToLongRest: Int = 0) {
+        self.timerManager = TimerManager(totalSeconds: totalSeconds)
+        
+        if [stagesQuantity, secondsToBasicRest, secondsToLongRest].allSatisfy({ $0 != 0 }) {
+            self.stagesHandler = CountdownViewStagesHandler(secondsOfStage: totalSeconds,
+                                               stagesQuantity: stagesQuantity,
+                                               secondsToBasicRest: secondsToBasicRest,
+                                               secondsToLongRest: secondsToLongRest)
+        }
+        
+        timerManager?.delegate = self
+        timerManager?.start()
+        updateLabels()
+        setupCircularGradientAnimation()
+        startCircularGradientAnimation()
+    }
+        
+    func pauseCountdown() {
+        timerManager?.stop()
+
+        circularGradientCountdownAnimation?.pause()
+    }
+    
+    func resumeCountdown() {
+        circularGradientCountdownAnimation?.resume()
+        
+        timerManager?.adjustRemainingTimeForMilliseconds = true
+        timerManager?.startMillisecondsTimer()
+    }
+    
+    func stopCountdown() {
+        invalidateTimer()
+        delegate?.timerFinished(completedStages: stagesHandler?.completedStages ?? 0,
+                                completedRests: stagesHandler?.completedRests ?? 0)
+        stagesHandler = nil
+        updateLabels()
+        circularGradientCountdownAnimation?.stop()
+        innerShadowView.layer.removeSublayer(name: "gradientWithMask")
+    }
+        
+    func nextStage() {
+        invalidateTimer()
+        timerEnded()
+    }
+}
+
+//MARK: - TimerManagerDelegate
+extension CountdownView: TimerManagerDelegate {
+    func remainingTimeUpdated() {
+        updateTimeLabel()
+    }
+    
+    func appWillEnterForeground() {
+        startCircularGradientAnimation(withRemainingTime: true)
+    }
+    
+    func timerEnded() {
+        guard let stagesHandler = stagesHandler else { return }
+        
+        if stagesHandler.canAdvanceToNextStage() {
+            stagesHandler.advanceToNextStage()
+            startCountdown(totalSeconds: stagesHandler.secondsToNextStage)
+        } else {
+            stopCountdown()
+        }
     }
 }
