@@ -38,6 +38,26 @@ extension UIViewController {
         }
     }
     
+    func updateNavigationButtonState(isEnabled: Bool, position: NavigationButtonPosition) {
+        let barButtonItem: UIBarButtonItem? = getNavigationButton(position: position)
+        
+        let gradientColors: [UIColor] = isEnabled ? [.systemPurple, .systemPink] : [.gray, .gray]
+        
+        let customImage = barButtonItem?.customView as? NavigationButtonView
+        customImage?.navigationButtonImageView.image = customImage?.navigationButtonImageView.image?.gradientImage(gradientColors)
+        
+        barButtonItem?.isEnabled = isEnabled
+    }
+    
+    private func getNavigationButton(position: NavigationButtonPosition) -> UIBarButtonItem? {
+        switch position {
+        case .left:
+            return self.navigationItem.leftBarButtonItem
+        case .right:
+            return self.navigationItem.rightBarButtonItem
+        }
+    }
+    
     enum NavigationButtonPosition {
         case left, right
     }
