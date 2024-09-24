@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var playerControlView: PlayerControlView!
     @IBOutlet weak var taskInfoView: TitleSubtextView!
     
+    // MARK: Private Properties
+    private let viewModel: HomeViewModel = HomeViewModel()
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,26 +51,39 @@ class HomeViewController: UIViewController {
         setDefaultTaskInfoTexts()
     }
     
+    // MARK: Private funcs
     private func setDefaultTaskInfoTexts() {
         taskInfoView.titleText = "Gotta do some work?"
         taskInfoView.subtextText = "Press plus button when you are ready"
     }
+    
+    private func updateSettingsNavigationBarButton(isEnabled: Bool) {
+        updateNavigationButtonState(isEnabled: isEnabled, position: .right)
+    }
 }
 
 // MARK: - CountdownViewDelegate
+
 extension HomeViewController: CountdownViewDelegate {
     func timerFinished(completedStages: Int, completedRests: Int) {
+        updateSettingsNavigationBarButton(isEnabled: true)
         resetPlayerControl()
         setDefaultTaskInfoTexts()
+        viewModel.saveSessionInformation(completedStages: completedStages, completedRests: completedRests)
     }
 }
 
 // MARK: - PlayerControlViewDelegate
+
 extension HomeViewController: PlayerControlViewDelegate {
+
+    // MARK: Stop Button control
     func didTapStopButton() {
         countdownView.stopCountdown()
         resetPlayerControl()
         setDefaultTaskInfoTexts()
+        updateSettingsNavigationBarButton(isEnabled: true)
+        HapticFeedbackHandler.impactOccurred(intensity: 3)
     }
     
     private func resetPlayerControl() {
@@ -76,14 +92,7 @@ extension HomeViewController: PlayerControlViewDelegate {
         playerControlView.resetPlusPlayPauseButtonState()
     }
     
-    func didTapForwardButton(state: PlusPlayPauseButtonState) {
-        if state == .play {
-            playButtonPressed()
-        }
-        
-        countdownView.nextStage()
-    }
-    
+    // MARK: PlusPlayPause Button control
     func didTapPlusPlayPauseButton(state: PlusPlayPauseButtonState) {
         switch state {
         case .plus:
@@ -102,11 +111,13 @@ extension HomeViewController: PlayerControlViewDelegate {
     private func playButtonPressed() {
         countdownView.resumeCountdown()
         changePlusPlayPauseButtonToNextState()
+        HapticFeedbackHandler.impactOccurred()
     }
 
     private func pauseButtonPressed() {
         countdownView.pauseCountdown()
         changePlusPlayPauseButtonToNextState()
+        HapticFeedbackHandler.impactOccurred()
     }
     
     private func changePlusPlayPauseButtonToNextState() {
@@ -119,13 +130,22 @@ extension HomeViewController: PlayerControlViewDelegate {
         newTaskViewController.delegate = self
         
         navigationController?.present(newTaskViewController, animated: true)
-        let hapticFeedback = UIImpactFeedbackGenerator()
-        hapticFeedback.prepare()
-        hapticFeedback.impactOccurred(intensity: 2)
+        HapticFeedbackHandler.impactOccurred(intensity: 2)
+    }
+    
+    // MARK: Forward Button control
+    func didTapForwardButton(state: PlusPlayPauseButtonState) {
+        if state == .play {
+            playButtonPressed()
+        }
+        
+        HapticFeedbackHandler.impactOccurred()
+        countdownView.nextStage()
     }
 }
 
 // MARK: - NewTaskViewControllerDelegate
+
 extension HomeViewController: NewTaskViewControllerDelegate {
     func taskDidAdded(task: String, taskType: String) {
         taskInfoView.titleText = task
@@ -134,31 +154,27 @@ extension HomeViewController: NewTaskViewControllerDelegate {
         prepareTimerForStart()
     }
     
-    private func startTimer() {
-        countdownView.startCountdown(totalSeconds: 5, stagesQuantity: 4, secondsToBasicRest: 2, secondsToLongRest: 7)
-    }
-    
     private func prepareTimerForStart() {
         playerControlView.change(isEnabled: true, playerControlButton: .stop)
         playerControlView.change(isEnabled: true, playerControlButton: .forward)
         changePlusPlayPauseButtonToNextState()
     }
+    
+    // MARK: Timer Control
+    private func startTimer() {
+        startCountdownView()
+        updateSettingsNavigationBarButton(isEnabled: false)
+    }
+    
+    private func startCountdownView() {
+        let totalSeconds: Int = viewModel.getSettingValue(for: .pomodoroLength)
+        let stagesQuantity: Int = viewModel.getSettingValue(for: .longRestCadence)
+        let secondsToBasicRest: Int = viewModel.getSettingValue(for: .basicRestLength)
+        let secondsToLongRest: Int = viewModel.getSettingValue(for: .longRestLength)
+        
+        countdownView.startCountdown(totalSeconds: totalSeconds,
+                                     stagesQuantity: stagesQuantity,
+                                     secondsToBasicRest: secondsToBasicRest,
+                                     secondsToLongRest: secondsToLongRest)
+    }
 }
-
-//struct HomeViewController_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ViewControllerPreview()
-//    }
-//}
-//
-//struct ViewControllerPreview: UIViewControllerRepresentable {
-//    typealias UIViewControllerType = HomeViewController
-//    
-//    func makeUIViewController(context: Context) -> HomeViewController {
-//        HomeViewController()
-//    }
-//    
-//    func updateUIViewController(_ uiViewController: HomeViewController, context: Context) {
-//        
-//    }
-//}

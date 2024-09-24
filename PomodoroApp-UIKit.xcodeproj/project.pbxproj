@@ -15,6 +15,7 @@
 		D21DAC152C19205F007AE330 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC122C19205F007AE330 /* SettingsViewController.swift */; };
 		D21DAC192C1930A6007AE330 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21DAC182C1930A6007AE330 /* HistoryViewController.xib */; };
 		D21DAC1A2C1930A6007AE330 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC172C1930A6007AE330 /* HistoryViewController.swift */; };
+		D2255B612C98F21C0064FC30 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2255B602C98F21C0064FC30 /* HomeViewModel.swift */; };
 		D2498D372C6A71CF00577E91 /* NewTaskViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2498D362C6A71CF00577E91 /* NewTaskViewControllerDelegate.swift */; };
 		D24CBC782C6177BC00365BEB /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24CBC762C6177BC00365BEB /* NewTaskViewController.swift */; };
 		D24CBC792C6177BD00365BEB /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24CBC772C6177BC00365BEB /* NewTaskViewController.xib */; };
@@ -40,6 +41,7 @@
 		D2961E5D2BE709C600ADDD40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E5B2BE709C600ADDD40 /* HomeViewController.swift */; };
 		D2961E5E2BE709C600ADDD40 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2961E5C2BE709C600ADDD40 /* HomeViewController.xib */; };
 		D2961E642BE7104C00ADDD40 /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */; };
+		D2AE92692CA23A4F0037170D /* HapticFeedbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AE92682CA23A4F0037170D /* HapticFeedbackHandler.swift */; };
 		D2C0A6622C7D5A3200FF3653 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6612C7D5A3200FF3653 /* TimerManager.swift */; };
 		D2C0A6642C7D5A8C00FF3653 /* TimerManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6632C7D5A8C00FF3653 /* TimerManagerDelegate.swift */; };
 		D2C0A6682C81210F00FF3653 /* CountdownViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6672C81210F00FF3653 /* CountdownViewDelegate.swift */; };
@@ -72,6 +74,7 @@
 		D21DAC132C19205F007AE330 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		D21DAC172C1930A6007AE330 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D21DAC182C1930A6007AE330 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		D2255B602C98F21C0064FC30 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D2498D362C6A71CF00577E91 /* NewTaskViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D24CBC762C6177BC00365BEB /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		D24CBC772C6177BC00365BEB /* NewTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		D2961E5B2BE709C600ADDD40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2961E5C2BE709C600ADDD40 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D2961E632BE7104C00ADDD40 /* NavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
+		D2AE92682CA23A4F0037170D /* HapticFeedbackHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackHandler.swift; sourceTree = "<group>"; };
 		D2C0A6612C7D5A3200FF3653 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		D2C0A6632C7D5A8C00FF3653 /* TimerManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerDelegate.swift; sourceTree = "<group>"; };
 		D2C0A6672C81210F00FF3653 /* CountdownViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewDelegate.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 			children = (
 				D253ED602C2F1FDA003734B2 /* SettingsViewModel.swift */,
 				D27867FE2C63C2B00062B67E /* NewTaskViewModel.swift */,
+				D2255B602C98F21C0064FC30 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -336,9 +341,18 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D2AE92672CA239100037170D /* HapticFeedbackHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D2AE92682CA23A4F0037170D /* HapticFeedbackHandler.swift */,
+			);
+			path = HapticFeedbackHandler;
+			sourceTree = "<group>";
+		};
 		D2C0A6602C7D5A1300FF3653 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D2AE92672CA239100037170D /* HapticFeedbackHandler */,
 				D21843582C8E52040009313C /* GradientLayerProvider */,
 				D21843572C8E51DD0009313C /* CircularGradientStrokeEndAnimation */,
 				D2C0A6652C7D5AE300FF3653 /* TimerManager */,
@@ -489,9 +503,11 @@
 				D24CBC782C6177BC00365BEB /* NewTaskViewController.swift in Sources */,
 				D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */,
 				D27868012C63D7EE0062B67E /* SegmentedControlView.swift in Sources */,
+				D2255B612C98F21C0064FC30 /* HomeViewModel.swift in Sources */,
 				D21DAC102C191FA0007AE330 /* UIViewController+Extension.swift in Sources */,
 				D2C0A6942C87D16A00FF3653 /* GradientLayerProvider.swift in Sources */,
 				D2C0A6642C7D5A8C00FF3653 /* TimerManagerDelegate.swift in Sources */,
+				D2AE92692CA23A4F0037170D /* HapticFeedbackHandler.swift in Sources */,
 				D2498D372C6A71CF00577E91 /* NewTaskViewControllerDelegate.swift in Sources */,
 				D2961E282BE7042000ADDD40 /* AppDelegate.swift in Sources */,
 				D2C0A6982C8805FF00FF3653 /* CountdownViewStagesHandler.swift in Sources */,
