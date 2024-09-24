@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="SessionInformation" representedClassName="SessionInformation" syncable="YES" codeGenerationType="class">
+    <entity name="SessionInformations" representedClassName="SessionInformations" syncable="YES" codeGenerationType="class">
         <attribute name="pomodoros" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rests" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="settings" toMany="YES" deletionRule="Nullify" destinationEntity="Settings" inverseName="sessionInformations" inverseEntity="Settings"/>
@@ -9,12 +9,12 @@
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="type" attributeType="String"/>
-        <relationship name="sessionInformations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SessionInformation" inverseName="settings" inverseEntity="SessionInformation"/>
+        <relationship name="sessionInformations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SessionInformations" inverseName="settings" inverseEntity="SessionInformations"/>
     </entity>
     <entity name="Tasks" representedClassName="Tasks" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="task" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="sessionInformation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SessionInformation" inverseName="task" inverseEntity="SessionInformation"/>
+        <relationship name="sessionInformation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SessionInformations" inverseName="task" inverseEntity="SessionInformations"/>
     </entity>
 </model>
