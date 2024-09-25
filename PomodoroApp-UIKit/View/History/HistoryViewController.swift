@@ -7,8 +7,9 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+final class HistoryViewController: UIViewController {
 
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -8,10 +8,12 @@
 import UIKit
 
 @IBDesignable
-class SegmentedControlView: UIView {
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var stackView: UIStackView!
+final class SegmentedControlView: UIView {
+    // MARK: @IBOutlets
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var stackView: UIStackView!
     
+    // MARK: Privates Properties
     private var selectedSegmentView = UIView()
     private var selectedSegmentViewHasSet: Bool = false
     private(set) var selectedSegment: String?
@@ -28,6 +30,7 @@ class SegmentedControlView: UIView {
         }
     }
     
+    // MARK: @IBInspectables
     @IBInspectable var quantitySegments: Int = 0 {
         didSet {
             setButtons()
@@ -43,6 +46,7 @@ class SegmentedControlView: UIView {
         }
     }
 
+    // MARK: Initializations
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -53,6 +57,7 @@ class SegmentedControlView: UIView {
         setup()
     }
     
+    // MARK: Override Funcs
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -63,21 +68,9 @@ class SegmentedControlView: UIView {
         setupSegmentedControl()
     }
     
+    // MARK: Setups
     private func setup() {
         instantiateCustomViewOnNib(name: self.name)
-    }
-    
-    private func setButtons() {
-        var buttons: [UIButton] = []
-        
-        for _ in 0..<quantitySegments {
-            let button = UIButton(type: .system)
-            button.addTarget(self, action: #selector(buttonTapped(buttonTapped: )) , for: .touchUpInside)
-            button.backgroundColor = .clear
-            buttons.append(button)
-        }
-        
-        self.buttons = buttons
     }
     
     private func setupSegmentedControl() {
@@ -100,12 +93,27 @@ class SegmentedControlView: UIView {
         }
     }
     
+    // MARK: Titles and Buttons setup
     private func setTitles() {
         for index in 0..<buttons.count where buttons.count == segmentTitles.count {
             buttons[index].setTitle(segmentTitles[index], for: .normal)
         }
     }
     
+    private func setButtons() {
+        var buttons: [UIButton] = []
+        
+        for _ in 0..<quantitySegments {
+            let button = UIButton(type: .system)
+            button.addTarget(self, action: #selector(buttonTapped(buttonTapped: )) , for: .touchUpInside)
+            button.backgroundColor = .clear
+            buttons.append(button)
+        }
+        
+        self.buttons = buttons
+    }
+    
+    // MARK: Actions
     @objc func buttonTapped(buttonTapped: UIButton) {
         moveSelectedSegmentView(for: buttonTapped)
         selectedSegment = buttonTapped.titleLabel?.text

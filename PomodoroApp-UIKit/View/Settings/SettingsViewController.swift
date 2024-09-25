@@ -9,9 +9,11 @@ import UIKit
 import SwiftUI
 import CoreData
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
+    // MARK: Private Properties
     private let viewModel: SettingsViewModel? = SettingsViewModel()
     
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Settings"
@@ -20,6 +22,7 @@ class SettingsViewController: UIViewController {
         addCountersViews()
     }
     
+    // MARK: Setups
     private func setupBackbutton() {
         setNavigationButton(position: .left, systemName: "arrowshape.turn.up.backward") { [weak self] in
             self?.navigationController?.popViewController(animated: true)
@@ -55,6 +58,7 @@ class SettingsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.counterChanged(_:)), name: NSNotification.Name(identifier), object: nil)
     }
     
+    // MARK: Actions
     @objc private func counterChanged(_ notification: NSNotification) {
         guard let counterView = notification.object as? CounterView,
               let type = counterView.title.text,

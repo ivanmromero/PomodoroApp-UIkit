@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIView {
+    var name: String {
+        return String(describing: type(of: self))
+    }
+    
     func instantiateCustomViewOnNib(name: String) {
         let nib = UINib(nibName: name, bundle: nil)
         guard let customView = nib.instantiate(withOwner: self).first as? UIView else {
@@ -19,8 +23,8 @@ extension UIView {
         addSubview(customView)
     }
     
-    var name: String {
-        return String(describing: type(of: self))
+    func hasPreviousLayerWith(name: String) -> Bool {
+        layer.sublayers?.contains { $0.name == name } ?? false
     }
     
     func addDefaultShadow(for shadowType: ShadowType, cornerRadius: CGFloat = 10) {
@@ -64,9 +68,5 @@ extension UIView {
             
             layer.updateShadowsOnLayout(for: .inner)
         }
-    }
-    
-    func hasPreviousLayerWith(name: String) -> Bool {
-        layer.sublayers?.contains { $0.name == name } ?? false
     }
 }

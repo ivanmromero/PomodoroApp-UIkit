@@ -10,16 +10,23 @@ import CoreData
 
 final class HomeViewModel {
     // MARK: Private Properties
-    private let context: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    private let context: NSManagedObjectContext
+        
+    // MARK: Initialization
+    init?() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        else { return nil }
+        self.context = context
+    }
     
-    // MARK: Task
+    // MARK: Last Task
     private var task: Tasks? {
-        try? context?.fetch(Tasks.fetchRequest()).last
+        try? context.fetch(Tasks.fetchRequest()).last
     }
     
     // MARK: Settings
     private var settings: [Settings]? {
-        try? context?.fetch(Settings.fetchRequest())
+        try? context.fetch(Settings.fetchRequest())
     }
     
     func getSettingValue(for type: SettingType) -> Int {
@@ -34,8 +41,6 @@ final class HomeViewModel {
     
     // MARK: Session Information
     func saveSessionInformation(completedStages: Int, completedRests: Int) {
-        guard let context else { return }
-        
         let newSessionInformation = SessionInformations(context: context)
         
         newSessionInformation.pomodoros = Int16(completedStages)

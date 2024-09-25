@@ -7,14 +7,14 @@
 
 import UIKit
 
-class PlayerControlView: UIView {
+final class PlayerControlView: UIView {
     // MARK: @IBOutlets
     @IBOutlet weak private var shadowView: UIView!
     @IBOutlet weak private var stopButton: UIButton!
     @IBOutlet weak private var plusPlayPauseButton: UIButton!
     @IBOutlet weak private var forwardButton: UIButton!
     
-    // MARK: Private Properties
+    // MARK: Privates Properties
     private var plusPlayPauseButtonState: PlusPlayPauseButtonState = PlusPlayPauseButtonState() {
         didSet {
             set(image: plusPlayPauseButtonState.image, for: plusPlayPauseButton)

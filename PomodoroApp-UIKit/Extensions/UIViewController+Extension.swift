@@ -26,7 +26,7 @@ extension UIViewController {
         navigationButton.frame = CGRect(x: 0, y: 0, width: navigationBarHeight * 0.75 , height: navigationBarHeight * 0.75)
         
         // set action
-        navigationButton.buttonAction = action ?? {}
+        navigationButton.setAction(action ?? {})
 
         let barButtonItem = UIBarButtonItem(customView: navigationButton)
         

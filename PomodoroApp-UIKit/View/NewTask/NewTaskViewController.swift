@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewTaskViewController: UIViewController {
+final class NewTaskViewController: UIViewController {
     // MARK: @IBOutlets
     @IBOutlet weak var dissmissButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
