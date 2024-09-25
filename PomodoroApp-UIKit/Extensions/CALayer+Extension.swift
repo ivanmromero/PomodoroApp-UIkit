@@ -8,6 +8,7 @@
 import UIKit
 
 extension CALayer {
+    // MARK: Internal Funcs
     func updateFrame(with bounds: CGRect) {
         frame = bounds
     }
@@ -68,6 +69,15 @@ extension CALayer {
         }
     }
     
+    func removeSublayer(name: String) {
+        guard let sublayers = self.sublayers else { return }
+        
+        if let layerToRemove = sublayers.first(where: { $0.name == name }) {
+            layerToRemove.removeFromSuperlayer()
+        }
+    }
+    
+    // MARK: Privates Funcs
     private func updateShadow(type: ShadowType,
                               color: CGColor,
                               bounds: CGRect,
@@ -110,13 +120,5 @@ extension CALayer {
         let cutout = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).reversing()
         path.append(cutout)
         shadowPath = path.cgPath
-    }
-    
-    func removeSublayer(name: String) {
-        guard let sublayers = self.sublayers else { return }
-        
-        if let layerToRemove = sublayers.first(where: { $0.name == name }) {
-            layerToRemove.removeFromSuperlayer()
-        }
     }
 }

@@ -8,11 +8,13 @@
 import UIKit
 
 @IBDesignable
-class TitleSubtextView: UIView {
+final class TitleSubtextView: UIView {
+    // MARK: @IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtextLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     
+    // MARK: @IBInspectables
     @IBInspectable var titleText: String = "title" {
         didSet {
             titleLabel?.text = titleText
@@ -32,10 +34,16 @@ class TitleSubtextView: UIView {
         }
     }
     
-    var axis: NSLayoutConstraint.Axis {
+    private var axis: NSLayoutConstraint.Axis {
         axisRawValue == 0 ? .vertical : .horizontal
     }
-
+    
+    // MARK: TitleSubtext Components
+    enum TitleSubtextComponent {
+        case title, subtext
+    }
+    
+    // MARK: Initializations
     init(titleText: String, subtext: String, axis: NSLayoutConstraint.Axis) {
         super.init(frame: .zero)
         instantiateCustomViewOnNib(name: name)
@@ -53,23 +61,8 @@ class TitleSubtextView: UIView {
         super.init(coder: coder)
         instantiateCustomViewOnNib(name: name)
     }
-    
-    func change(fontSize: CGFloat, for component: TitleSubtextComponent) {
-        let component = getLabel(for: component)
         
-        component.font = component.font.withSize(fontSize)
-    }
-    
-    func change(text: String,for component: TitleSubtextComponent) {
-        let component = getLabel(for: component)
-        
-        component.text = text
-    }
-    
-    private func getLabel(for component: TitleSubtextComponent) -> UILabel {
-        component == .title ? titleLabel : subtextLabel
-    }
-    
+    // MARK: Setups
     private func prepare(for axis: NSLayoutConstraint.Axis) {
         axis == .horizontal ? prepareForHorizontalAxis() : prepareForVerticalAxis()
     }
@@ -88,7 +81,20 @@ class TitleSubtextView: UIView {
         subtextLabel?.textAlignment = .left
     }
     
-    enum TitleSubtextComponent {
-        case title, subtext
+    // MARK: Modifiers
+    func change(fontSize: CGFloat, for component: TitleSubtextComponent) {
+        let component = getLabel(for: component)
+        
+        component.font = component.font.withSize(fontSize)
+    }
+    
+    func change(text: String,for component: TitleSubtextComponent) {
+        let component = getLabel(for: component)
+        
+        component.text = text
+    }
+    
+    private func getLabel(for component: TitleSubtextComponent) -> UILabel {
+        component == .title ? titleLabel : subtextLabel
     }
 }

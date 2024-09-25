@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CountdownView: UIView {
+final class CountdownView: UIView {
     // MARK: @IBOutlets
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var stageLabel: UILabel!

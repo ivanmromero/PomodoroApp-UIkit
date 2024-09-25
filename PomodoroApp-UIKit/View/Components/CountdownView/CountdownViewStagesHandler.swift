@@ -5,7 +5,7 @@
 //  Created by Ivan Romero on 04/09/2024.
 //
 
-class CountdownViewStagesHandler {
+final class CountdownViewStagesHandler {
     // MARK: Private Properties
     private var secondsOfStage: Int
     private var stagesQuantity: Int {

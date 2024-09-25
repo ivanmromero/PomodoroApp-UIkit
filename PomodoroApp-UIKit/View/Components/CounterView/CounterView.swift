@@ -7,13 +7,15 @@
 
 import UIKit
 
-class CounterView: UIView {
-    let identifier: String = UUID().uuidString
-    
+final class CounterView: UIView {
+    // MARK: @IBOutlets
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var counter: UILabel!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet private weak var plusButton: UIButton!
+    @IBOutlet private weak var minusButton: UIButton!
+    
+    // MARK: Properties
+    let identifier: String = UUID().uuidString
     
     init(title: String, counter: String) {
         super.init(frame: .zero)
@@ -22,11 +24,13 @@ class CounterView: UIView {
         self.counter.text = counter
     }
     
+    // MARK: Initializations
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
 
+    // MARK: Override Funcs
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -35,6 +39,7 @@ class CounterView: UIView {
         plusButton.layer.updateShadowsOnLayout(for: .outer)
     }
     
+    // MARK: Setups
     private func setup() {
         instantiateCustomViewOnNib(name: self.name)
         setup(minusButton)
@@ -66,6 +71,7 @@ class CounterView: UIView {
         }
     }
     
+    // MARK: @IBActions
     @IBAction func counterTapped(_ sender: UIButton) {
         changeCounterText(for: sender)
         

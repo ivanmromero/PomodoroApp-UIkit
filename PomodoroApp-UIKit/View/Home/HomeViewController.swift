@@ -8,14 +8,14 @@
 import UIKit
 import SwiftUI
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     // MARK: @IBOutlets
     @IBOutlet weak var countdownView: CountdownView!
     @IBOutlet weak var playerControlView: PlayerControlView!
     @IBOutlet weak var taskInfoView: TitleSubtextView!
     
     // MARK: Private Properties
-    private let viewModel: HomeViewModel = HomeViewModel()
+    private let viewModel: HomeViewModel? = HomeViewModel()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -69,7 +69,7 @@ extension HomeViewController: CountdownViewDelegate {
         updateSettingsNavigationBarButton(isEnabled: true)
         resetPlayerControl()
         setDefaultTaskInfoTexts()
-        viewModel.saveSessionInformation(completedStages: completedStages, completedRests: completedRests)
+        viewModel?.saveSessionInformation(completedStages: completedStages, completedRests: completedRests)
     }
 }
 
@@ -167,10 +167,11 @@ extension HomeViewController: NewTaskViewControllerDelegate {
     }
     
     private func startCountdownView() {
-        let totalSeconds: Int = viewModel.getSettingValue(for: .pomodoroLength)
-        let stagesQuantity: Int = viewModel.getSettingValue(for: .longRestCadence)
-        let secondsToBasicRest: Int = viewModel.getSettingValue(for: .basicRestLength)
-        let secondsToLongRest: Int = viewModel.getSettingValue(for: .longRestLength)
+        guard let totalSeconds: Int = viewModel?.getSettingValue(for: .pomodoroLength),
+              let stagesQuantity: Int = viewModel?.getSettingValue(for: .longRestCadence),
+              let secondsToBasicRest: Int = viewModel?.getSettingValue(for: .basicRestLength),
+              let secondsToLongRest: Int = viewModel?.getSettingValue(for: .longRestLength)
+        else { return }
         
         countdownView.startCountdown(totalSeconds: totalSeconds,
                                      stagesQuantity: stagesQuantity,

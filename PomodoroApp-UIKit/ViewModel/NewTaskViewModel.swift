@@ -5,28 +5,30 @@
 //  Created by Ivan Romero on 07/08/2024.
 //
 
-import Foundation
 import UIKit
 import CoreData
 
-class NewTaskViewModel {
-    private var contex: NSManagedObjectContext
+final class NewTaskViewModel {
+    // MARK: Private Properties
+    private var context: NSManagedObjectContext
     
+    // MARK: Initialization
     init?() {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
         else { return nil }
-        self.contex = context
+        self.context = context
     }
     
+    // MARK: Task create
     func createTask(with taskText: String, and taskType: String) -> Bool {
-        let tasks = Tasks(context: contex)
+        let tasks = Tasks(context: context)
         
         tasks.task = taskText
         tasks.date = Date()
         tasks.type = taskType
         
         do {
-            try contex.save()
+            try context.save()
             return true
         } catch {
             return false
