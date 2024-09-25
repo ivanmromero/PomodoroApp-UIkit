@@ -41,7 +41,7 @@ final class HomeViewModel {
     
     // MARK: Session Information
     func saveSessionInformation(completedStages: Int, completedRests: Int) {
-        let newSessionInformation = SessionInformations(context: context)
+        let newSessionInformation = SessionsInformation(context: context)
         
         newSessionInformation.pomodoros = Int16(completedStages)
         newSessionInformation.rests = Int16(completedRests)
