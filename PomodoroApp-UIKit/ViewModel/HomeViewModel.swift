@@ -8,10 +8,9 @@
 import UIKit
 import CoreData
 
-class HomeViewModel {
+final class HomeViewModel {
     // MARK: Private Properties
     private let context: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-    private var settingsUsed: [Settings]?
     
     // MARK: Task
     private var task: Tasks? {
@@ -19,18 +18,12 @@ class HomeViewModel {
     }
     
     // MARK: Settings
-    private func getSettings() -> [Settings]? {
-        guard let context else { return nil }
-        
-        let settingsRequest: NSFetchRequest<Settings> = Settings.fetchRequest()
-        
-        settingsUsed = try? context.fetch(settingsRequest)
-        
-        return settingsUsed
+    private var settings: [Settings]? {
+        try? context?.fetch(Settings.fetchRequest())
     }
     
     func getSettingValue(for type: SettingType) -> Int {
-        guard let settings = getSettings(),
+        guard let settings = settings,
               let setting = settings.first(where: { $0.type == type.rawValue })
         else { return type.defaultValue }
         
@@ -48,8 +41,8 @@ class HomeViewModel {
         newSessionInformation.pomodoros = Int16(completedStages)
         newSessionInformation.rests = Int16(completedRests)
         
-        guard let settingsUsed else { return }
-        newSessionInformation.settings = NSSet(array: settingsUsed)
+        guard let settings else { return }
+        newSessionInformation.settings = NSSet(array: settings)
         
         newSessionInformation.task = task
         
