@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         title = "Settings"
         setupBackbutton()
-        viewModel?.verifyFistInit()
+        viewModel?.verifyFirstInit()
         addCountersViews()
     }
     

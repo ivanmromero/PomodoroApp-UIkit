@@ -8,30 +8,30 @@
 import UIKit
 import CoreData
 
-class SettingsViewModel {
+final class SettingsViewModel {
+    // MARK: Private Properties
     private let context: NSManagedObjectContext
-    private let settingsModel: SettingsModel
+    private let settingsTypes: [SettingType]
     
+    // MARK: Initialization
     init?() {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext 
         else { return nil }
         
         self.context = context
-        self.settingsModel = SettingsModel()
+        self.settingsTypes = SettingType.allCases
     }
 
-    func verifyFistInit() {
+    // MARK: First init
+    func verifyFirstInit() {
         guard let settings = getSettings(),
               settings.isEmpty
         else { return }
         
-        for type in settingsModel.types {
-            if let count = settingsModel.settingsDict[type] {
-                addNewSetting(type: type, count: Int16(count))
-            }
-        }
+        settingsTypes.forEach { addNewSetting(type: $0.rawValue, count: Int16($0.defaultValue)) }
     }
     
+    // MARK: Settings cru
     private func addNewSetting(type: String, count: Int16) {
         let nuevoSetting = Settings(context: context)
         
