@@ -45,9 +45,9 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupTaskInfoView() {
-        taskInfoView.change(adjustsFontSizeToFitWidth: false, for: .title)
-        taskInfoView.change(numberOfLines: 1, for: .title)
-        taskInfoView.change(lineBreakMode: .byTruncatingTail, for: .title)
+        taskInfoView.titleLabel.adjustsFontSizeToFitWidth = false
+        taskInfoView.titleLabel.numberOfLines = 1
+        taskInfoView.titleLabel.lineBreakMode = .byTruncatingTail
         setDefaultTaskInfoTexts()
     }
     

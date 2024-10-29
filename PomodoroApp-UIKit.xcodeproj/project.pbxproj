@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D21843522C8E436B0009313C /* PlayerControlViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21843512C8E436B0009313C /* PlayerControlViewDelegate.swift */; };
-		D2193EC92CAF5BDC0087343D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2193EC82CAF5BDC0087343D /* CalendarView.swift */; };
-		D2193ECB2CAF5BF40087343D /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2193ECA2CAF5BF40087343D /* CalendarView.xib */; };
-		D219B5F22CD05900003D2EE9 /* CellDeletionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D219B5F12CD05900003D2EE9 /* CellDeletionDelegate.swift */; };
-		D219B5F42CD0621D003D2EE9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D219B5F32CD0620F003D2EE9 /* Date+Extension.swift */; };
 		D21DAC0C2C19138E007AE330 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC0B2C19138E007AE330 /* UIImage+Extension.swift */; };
 		D21DAC0E2C19141E007AE330 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC0D2C19141E007AE330 /* UIView+Extension.swift */; };
 		D21DAC102C191FA0007AE330 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DAC0F2C191FA0007AE330 /* UIViewController+Extension.swift */; };
@@ -31,9 +27,6 @@
 		D25543052C2D0D5A000DAD18 /* ShadowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25543042C2D0D5A000DAD18 /* ShadowType.swift */; };
 		D258A6312C3B4B0400F68990 /* TitleSubtextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258A6302C3B4B0400F68990 /* TitleSubtextView.swift */; };
 		D258A6332C3B4B4C00F68990 /* TitleSubtextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D258A6322C3B4B4C00F68990 /* TitleSubtextView.xib */; };
-		D2656AAF2CB228550003B21C /* CalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2656AAE2CB228550003B21C /* CalendarViewDelegate.swift */; };
-		D2656AB32CB22FE50003B21C /* TaskDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2656AB22CB22FE50003B21C /* TaskDetailTableViewCell.xib */; };
-		D2656AB42CB22FE50003B21C /* TaskDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2656AB12CB22FE50003B21C /* TaskDetailTableViewCell.swift */; };
 		D26CEB392BE74FAA0012E4F4 /* NavigationButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26CEB382BE74FAA0012E4F4 /* NavigationButtonView.xib */; };
 		D27867FD2C62C7600062B67E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27867FC2C62C7600062B67E /* UIButton+Extension.swift */; };
 		D27867FF2C63C2B00062B67E /* NewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27867FE2C63C2B00062B67E /* NewTaskViewModel.swift */; };
@@ -56,7 +49,6 @@
 		D2C0A6942C87D16A00FF3653 /* GradientLayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6932C87D16A00FF3653 /* GradientLayerProvider.swift */; };
 		D2C0A6962C87D1F300FF3653 /* DefaultGradientLayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6952C87D1F300FF3653 /* DefaultGradientLayerProvider.swift */; };
 		D2C0A6982C8805FF00FF3653 /* CountdownViewStagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A6972C8805FF00FF3653 /* CountdownViewStagesHandler.swift */; };
-		D2D840462CBE006D007D71EC /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D840452CBE006D007D71EC /* HistoryViewModel.swift */; };
 		D2DF32182C508E76007E897A /* PlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DF32162C508E76007E897A /* PlayerControlView.swift */; };
 		D2DF32192C508E76007E897A /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DF32172C508E76007E897A /* PlayerControlView.xib */; };
 		D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EB18342C545FC0004F44F2 /* CountdownView.swift */; };
@@ -75,10 +67,6 @@
 
 /* Begin PBXFileReference section */
 		D21843512C8E436B0009313C /* PlayerControlViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlViewDelegate.swift; sourceTree = "<group>"; };
-		D2193EC82CAF5BDC0087343D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		D2193ECA2CAF5BF40087343D /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
-		D219B5F12CD05900003D2EE9 /* CellDeletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDeletionDelegate.swift; sourceTree = "<group>"; };
-		D219B5F32CD0620F003D2EE9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D21DAC0B2C19138E007AE330 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		D21DAC0D2C19141E007AE330 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D21DAC0F2C191FA0007AE330 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -98,9 +86,6 @@
 		D25543042C2D0D5A000DAD18 /* ShadowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowType.swift; sourceTree = "<group>"; };
 		D258A6302C3B4B0400F68990 /* TitleSubtextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtextView.swift; sourceTree = "<group>"; };
 		D258A6322C3B4B4C00F68990 /* TitleSubtextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleSubtextView.xib; sourceTree = "<group>"; };
-		D2656AAE2CB228550003B21C /* CalendarViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewDelegate.swift; sourceTree = "<group>"; };
-		D2656AB12CB22FE50003B21C /* TaskDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewCell.swift; sourceTree = "<group>"; };
-		D2656AB22CB22FE50003B21C /* TaskDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDetailTableViewCell.xib; sourceTree = "<group>"; };
 		D26CEB382BE74FAA0012E4F4 /* NavigationButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationButtonView.xib; sourceTree = "<group>"; };
 		D27867FC2C62C7600062B67E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D27867FE2C63C2B00062B67E /* NewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewModel.swift; sourceTree = "<group>"; };
@@ -126,7 +111,6 @@
 		D2C0A6932C87D16A00FF3653 /* GradientLayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerProvider.swift; sourceTree = "<group>"; };
 		D2C0A6952C87D1F300FF3653 /* DefaultGradientLayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGradientLayerProvider.swift; sourceTree = "<group>"; };
 		D2C0A6972C8805FF00FF3653 /* CountdownViewStagesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewStagesHandler.swift; sourceTree = "<group>"; };
-		D2D840452CBE006D007D71EC /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		D2DF32162C508E76007E897A /* PlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlView.swift; sourceTree = "<group>"; };
 		D2DF32172C508E76007E897A /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
 		D2EB18342C545FC0004F44F2 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
@@ -168,20 +152,9 @@
 			path = GradientLayerProvider;
 			sourceTree = "<group>";
 		};
-		D2193EC72CAF5BB60087343D /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				D2656AAE2CB228550003B21C /* CalendarViewDelegate.swift */,
-				D2193EC82CAF5BDC0087343D /* CalendarView.swift */,
-				D2193ECA2CAF5BF40087343D /* CalendarView.xib */,
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
 		D21DAC0A2C19135C007AE330 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D219B5F32CD0620F003D2EE9 /* Date+Extension.swift */,
 				D21DAC0B2C19138E007AE330 /* UIImage+Extension.swift */,
 				D21DAC0D2C19141E007AE330 /* UIView+Extension.swift */,
 				D21DAC0F2C191FA0007AE330 /* UIViewController+Extension.swift */,
@@ -203,7 +176,6 @@
 		D21DAC162C193089007AE330 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				D2656AB02CB22FAC0003B21C /* TaskDetailViewCell */,
 				D21DAC172C1930A6007AE330 /* HistoryViewController.swift */,
 				D21DAC182C1930A6007AE330 /* HistoryViewController.xib */,
 			);
@@ -255,20 +227,9 @@
 			path = TilteSubtext;
 			sourceTree = "<group>";
 		};
-		D2656AB02CB22FAC0003B21C /* TaskDetailViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				D219B5F12CD05900003D2EE9 /* CellDeletionDelegate.swift */,
-				D2656AB12CB22FE50003B21C /* TaskDetailTableViewCell.swift */,
-				D2656AB22CB22FE50003B21C /* TaskDetailTableViewCell.xib */,
-			);
-			path = TaskDetailViewCell;
-			sourceTree = "<group>";
-		};
 		D26CEB372BE715280012E4F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D2193EC72CAF5BB60087343D /* Calendar */,
 				D2DF321A2C5343A9007E897A /* PlayerControl */,
 				D258A62F2C3B4ACE00F68990 /* TilteSubtext */,
 				D25542F82C2A0FDB000DAD18 /* NavigationButton */,
@@ -355,7 +316,6 @@
 				D253ED602C2F1FDA003734B2 /* SettingsViewModel.swift */,
 				D27867FE2C63C2B00062B67E /* NewTaskViewModel.swift */,
 				D2255B602C98F21C0064FC30 /* HomeViewModel.swift */,
-				D2D840452CBE006D007D71EC /* HistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -512,11 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2961E342BE7042200ADDD40 /* Assets.xcassets in Resources */,
-				D2193ECB2CAF5BF40087343D /* CalendarView.xib in Resources */,
 				D258A6332C3B4B4C00F68990 /* TitleSubtextView.xib in Resources */,
 				D2EB18372C545FD3004F44F2 /* CountdownView.xib in Resources */,
 				D24CBC792C6177BD00365BEB /* NewTaskViewController.xib in Resources */,
-				D2656AB32CB22FE50003B21C /* TaskDetailTableViewCell.xib in Resources */,
 				D2DF32192C508E76007E897A /* PlayerControlView.xib in Resources */,
 				D26CEB392BE74FAA0012E4F4 /* NavigationButtonView.xib in Resources */,
 				D2961E372BE7042200ADDD40 /* Base in Resources */,
@@ -544,7 +502,6 @@
 			files = (
 				D24CBC782C6177BC00365BEB /* NewTaskViewController.swift in Sources */,
 				D2EB18352C545FC0004F44F2 /* CountdownView.swift in Sources */,
-				D219B5F42CD0621D003D2EE9 /* Date+Extension.swift in Sources */,
 				D27868012C63D7EE0062B67E /* SegmentedControlView.swift in Sources */,
 				D2255B612C98F21C0064FC30 /* HomeViewModel.swift in Sources */,
 				D21DAC102C191FA0007AE330 /* UIViewController+Extension.swift in Sources */,
@@ -555,20 +512,16 @@
 				D2961E282BE7042000ADDD40 /* AppDelegate.swift in Sources */,
 				D2C0A6982C8805FF00FF3653 /* CountdownViewStagesHandler.swift in Sources */,
 				D2C0A6962C87D1F300FF3653 /* DefaultGradientLayerProvider.swift in Sources */,
-				D219B5F22CD05900003D2EE9 /* CellDeletionDelegate.swift in Sources */,
 				D21DAC0E2C19141E007AE330 /* UIView+Extension.swift in Sources */,
 				D21DAC1A2C1930A6007AE330 /* HistoryViewController.swift in Sources */,
 				D2C0A6922C87D0F900FF3653 /* CircularGradientStrokeEndAnimation.swift in Sources */,
 				D2961E2A2BE7042000ADDD40 /* SceneDelegate.swift in Sources */,
 				D2C0A6622C7D5A3200FF3653 /* TimerManager.swift in Sources */,
 				D2961E322BE7042000ADDD40 /* PomodoroApp_UIKit.xcdatamodeld in Sources */,
-				D2656AAF2CB228550003B21C /* CalendarViewDelegate.swift in Sources */,
 				D21843522C8E436B0009313C /* PlayerControlViewDelegate.swift in Sources */,
 				D253ED632C2F20EA003734B2 /* SettingType.swift in Sources */,
-				D2193EC92CAF5BDC0087343D /* CalendarView.swift in Sources */,
 				D25542F72C2A0FCB000DAD18 /* CounterView.swift in Sources */,
 				D21DAC0C2C19138E007AE330 /* UIImage+Extension.swift in Sources */,
-				D2D840462CBE006D007D71EC /* HistoryViewModel.swift in Sources */,
 				D2961E642BE7104C00ADDD40 /* NavigationButtonView.swift in Sources */,
 				D2961E5D2BE709C600ADDD40 /* HomeViewController.swift in Sources */,
 				D27867FD2C62C7600062B67E /* UIButton+Extension.swift in Sources */,
@@ -578,7 +531,6 @@
 				D25543022C2D0C87000DAD18 /* CALayer+Extension.swift in Sources */,
 				D258A6312C3B4B0400F68990 /* TitleSubtextView.swift in Sources */,
 				D25543052C2D0D5A000DAD18 /* ShadowType.swift in Sources */,
-				D2656AB42CB22FE50003B21C /* TaskDetailTableViewCell.swift in Sources */,
 				D253ED612C2F1FDB003734B2 /* SettingsViewModel.swift in Sources */,
 				D2DF32182C508E76007E897A /* PlayerControlView.swift in Sources */,
 			);

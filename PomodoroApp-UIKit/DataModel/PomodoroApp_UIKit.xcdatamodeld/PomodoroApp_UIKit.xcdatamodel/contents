@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A348" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SessionsInformation" representedClassName="SessionsInformation" syncable="YES" codeGenerationType="class">
         <attribute name="pomodoros" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rests" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -15,6 +15,6 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="task" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="sessionInformation" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SessionsInformation" inverseName="task" inverseEntity="SessionsInformation"/>
+        <relationship name="sessionInformation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SessionsInformation" inverseName="task" inverseEntity="SessionsInformation"/>
     </entity>
 </model>

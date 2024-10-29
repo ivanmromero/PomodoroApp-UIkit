@@ -69,14 +69,4 @@ extension UIView {
             layer.updateShadowsOnLayout(for: .inner)
         }
     }
-    
-    func findSubviewFor(searchedViewName: String) -> UIView? {
-        if name == searchedViewName {
-            return self
-        }
-        
-        return subviews.compactMap { subview in
-            subview.findSubviewFor(searchedViewName: searchedViewName)
-        }.first
-    }
 }

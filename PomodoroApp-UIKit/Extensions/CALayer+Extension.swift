@@ -17,7 +17,6 @@ extension CALayer {
         let baseLayer = CALayer()
         baseLayer.backgroundColor = backgroundColor
         baseLayer.cornerRadius = cornerRadius
-        baseLayer.name = "baseLayer"
         
         insertSublayer(baseLayer, at: 0)
     }
@@ -61,9 +60,7 @@ extension CALayer {
     
     func updateShadowsOnLayout(for shadowType: ShadowType) {
         sublayers?.forEach { sublayer in
-            guard let shadowColor = sublayer.shadowColor,
-                  shadowColor == UIColor.black.cgColor || shadowColor == UIColor.white.cgColor || sublayer.name == "baseLayer"
-            else { return }
+            guard let shadowColor = sublayer.shadowColor else { return }
             
             sublayer.updateShadow(type: shadowType,
                                   color: shadowColor,
