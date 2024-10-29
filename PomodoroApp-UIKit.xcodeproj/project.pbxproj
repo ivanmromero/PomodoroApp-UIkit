@@ -366,8 +366,8 @@
 				D24CBC752C61778E00365BEB /* NewTask */,
 				D21DAC162C193089007AE330 /* History */,
 				D21DAC112C19203E007AE330 /* Settings */,
-				D26CEB372BE715280012E4F4 /* Components */,
 				D2961E622BE70DD100ADDD40 /* Home */,
+				D26CEB372BE715280012E4F4 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
