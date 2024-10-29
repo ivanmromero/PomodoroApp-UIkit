@@ -9,10 +9,10 @@ import UIKit
 
 final class HistoryViewController: UIViewController {
     // MARK: @IBOutlet
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var calendarButton: UIButton!
-    @IBOutlet weak var innerShadow: UIView!
-    @IBOutlet weak var dateText: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var calendarButton: UIButton!
+    @IBOutlet private weak var innerShadow: UIView!
+    @IBOutlet private weak var dateText: UILabel!
 
     // MARK: ViewModel
     private let viewModel: HistoryViewModel? = .init()

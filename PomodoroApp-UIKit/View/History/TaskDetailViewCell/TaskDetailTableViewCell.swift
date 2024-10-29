@@ -7,10 +7,10 @@
 
 import UIKit
 
-class TaskDetailTableViewCell: UITableViewCell {
+final class TaskDetailTableViewCell: UITableViewCell {
     // MARK: @IBOutlets
     @IBOutlet private weak var titleSubtextView: TitleSubtextView!
-    @IBOutlet weak var outerShadowView: UIView!
+    @IBOutlet private weak var outerShadowView: UIView!
     
     // MARK: Private Properties
     private let deleteView = UIView()

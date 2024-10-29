@@ -8,7 +8,7 @@
 import CoreData
 import UIKit
 
-class HistoryViewModel {
+final class HistoryViewModel {
     // MARK: Private Properties
     private let context: NSManagedObjectContext
     
