@@ -10,9 +10,9 @@ import UIKit
 @IBDesignable
 final class TitleSubtextView: UIView {
     // MARK: @IBOutlets
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtextLabel: UILabel!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtextLabel: UILabel!
+    @IBOutlet private weak var stackView: UIStackView!
     
     // MARK: @IBInspectables
     @IBInspectable var titleText: String = "title" {
@@ -81,6 +81,10 @@ final class TitleSubtextView: UIView {
         subtextLabel?.textAlignment = .left
     }
     
+    private func getLabel(for component: TitleSubtextComponent) -> UILabel {
+        component == .title ? titleLabel : subtextLabel
+    }
+    
     // MARK: Modifiers
     func change(fontSize: CGFloat, for component: TitleSubtextComponent) {
         let component = getLabel(for: component)
@@ -89,12 +93,22 @@ final class TitleSubtextView: UIView {
     }
     
     func change(text: String,for component: TitleSubtextComponent) {
-        let component = getLabel(for: component)
-        
-        component.text = text
+        getLabel(for: component).text = text
     }
     
-    private func getLabel(for component: TitleSubtextComponent) -> UILabel {
-        component == .title ? titleLabel : subtextLabel
+    func change(numberOfLines: Int, for component: TitleSubtextComponent) {
+        getLabel(for: component).numberOfLines = numberOfLines
+    }
+    
+    func change(adjustsFontSizeToFitWidth: Bool, for component: TitleSubtextComponent) {
+        getLabel(for: component).adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
+    }
+    
+    func change(lineBreakMode: NSLineBreakMode, for component: TitleSubtextComponent) {
+        getLabel(for: component).lineBreakMode = .byTruncatingTail
+    }
+    
+    func change(spacing: CGFloat) {
+        stackView?.spacing = spacing
     }
 }

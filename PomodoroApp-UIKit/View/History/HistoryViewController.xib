@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="PomodoroApp_UIKit" customModuleProvider="target">
             <connections>
+                <outlet property="calendarButton" destination="bdq-Ri-1Uc" id="G2Q-R2-PlF"/>
+                <outlet property="dateText" destination="OD7-XI-yMJ" id="eNo-BU-ERr"/>
+                <outlet property="innerShadow" destination="Tfh-8T-vcn" id="D7H-KI-pbR"/>
+                <outlet property="tableView" destination="AFO-wV-iNy" id="sBY-ge-FOM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +22,63 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD7-XI-yMJ">
+                    <rect key="frame" x="20" y="69" width="286.33333333333331" height="53"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdq-Ri-1Uc">
+                    <rect key="frame" x="321.33333333333331" y="69.666666666666671" width="51.666666666666686" height="51.666666666666671"/>
+                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bdq-Ri-1Uc" secondAttribute="height" multiplier="1:1" id="uKe-SF-P1b"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system"/>
+                    <connections>
+                        <action selector="calendarButtonTapped:" destination="-1" eventType="touchUpInside" id="8V5-vE-Dhh"/>
+                    </connections>
+                </button>
+                <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfh-8T-vcn">
+                    <rect key="frame" x="20" y="132" width="353" height="676"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AFO-wV-iNy">
+                            <rect key="frame" x="10" y="10" width="333" height="656"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="AFO-wV-iNy" firstAttribute="top" secondItem="Tfh-8T-vcn" secondAttribute="top" constant="10" id="5Ea-Uq-4Bx"/>
+                        <constraint firstAttribute="trailing" secondItem="AFO-wV-iNy" secondAttribute="trailing" constant="10" id="OsP-e0-yWB"/>
+                        <constraint firstAttribute="bottom" secondItem="AFO-wV-iNy" secondAttribute="bottom" constant="10" id="Pbn-ni-FPh"/>
+                        <constraint firstItem="AFO-wV-iNy" firstAttribute="leading" secondItem="Tfh-8T-vcn" secondAttribute="leading" constant="10" id="lEK-eX-i8Q"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BaseBackground"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="OD7-XI-yMJ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="EBY-iX-j1j"/>
+                <constraint firstItem="Tfh-8T-vcn" firstAttribute="top" secondItem="OD7-XI-yMJ" secondAttribute="bottom" constant="10" id="GSL-6z-nKP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Tfh-8T-vcn" secondAttribute="bottom" constant="10" id="K4H-nC-kv0"/>
+                <constraint firstItem="OD7-XI-yMJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="bOi-O1-xGW"/>
+                <constraint firstItem="bdq-Ri-1Uc" firstAttribute="height" secondItem="OD7-XI-yMJ" secondAttribute="height" multiplier="0.97" id="cg6-Al-d20"/>
+                <constraint firstItem="bdq-Ri-1Uc" firstAttribute="centerY" secondItem="OD7-XI-yMJ" secondAttribute="centerY" id="dyS-89-Rez"/>
+                <constraint firstItem="Tfh-8T-vcn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="h3f-pf-G1N"/>
+                <constraint firstItem="OD7-XI-yMJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mZt-Fx-rh2"/>
+                <constraint firstItem="bdq-Ri-1Uc" firstAttribute="leading" secondItem="OD7-XI-yMJ" secondAttribute="trailing" constant="15" id="n1D-s4-7EG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bdq-Ri-1Uc" secondAttribute="trailing" constant="20" id="vW0-5a-eZT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tfh-8T-vcn" secondAttribute="trailing" constant="20" id="wGL-VY-onn"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <namedColor name="BaseBackground">
             <color red="0.88235294117647056" green="0.88235294117647056" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
